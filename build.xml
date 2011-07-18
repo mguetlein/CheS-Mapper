@@ -22,6 +22,7 @@
 
   <!-- Compile the java code from ${src} into ${build} -->
   <target name="compile" description="compile the source" >
+  	<mkdir dir="${build}"/>
     <javac srcdir="${src}" destdir="${build}" classpathref="classpath">
 	</javac>  
   </target>
