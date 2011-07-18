@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<jnlp spec="1.0+" codebase="http://ortona.informatik.uni-freiburg.de/ches-mapper/" href="ches-mapper.jnlp">
+        <information>
+                <title>CheS-Mapper</title>
+                <vendor>Martin Guetlein</vendor>
+                <description>Initial Prototype</description>
+        </information>
+        <security>
+                <all-permissions/>
+        </security>
+        <resources>
+        	<j2se version="1.6+" />
+            <jar href="ches-mapper.jar" main="true" />
+            <jar href='ches-mapper_lib/cdk-jar-1.2.6.1/cdk-1.2.6.1.jar' download='lazy' />
+			<jar href='ches-mapper_lib/commons-lang-2.4/commons-lang-2.4.jar' download='lazy' />
+			<jar href='ches-mapper_lib/commons-math-1.2/commons-math-1.2.jar' download='lazy' />
+			<jar href='ches-mapper_lib/forms-1.2.1/forms-1.2.1.jar' download='lazy' />
+			<jar href='ches-mapper_lib/jmol-12.0.47/Jmol.jar' download='lazy' />
+			<jar href='ches-mapper_lib/weka-3-7-2/weka.jar' download='lazy' />
+			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/gnujaxp.jar' download='lazy' />
+			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/iText-2.1.5.jar' download='lazy' />
+			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/jcommon-1.0.16.jar' download='lazy' />
+			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/jfreechart-1.0.13-experimental.jar' download='lazy' />
+			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/jfreechart-1.0.13.jar' download='lazy' />
+			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/jfreechart-1.0.13-swt.jar' download='lazy' />
+			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/junit.jar' download='lazy' />
+			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/servlet.jar' download='lazy' />
+			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/swtgraphics2d.jar' download='lazy' />
+		</resources>
+        <application-desc main-class="gui.CheSView" />
+</jnlp>

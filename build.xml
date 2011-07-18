@@ -1,0 +1,85 @@
+<project name="ches-mapper" default="build_external_jar" basedir=".">
+    <description>
+        simple example build file
+    </description>
+
+  <!-- set global properties for this build -->
+  <property name="src" location="CheS-View/src;CheS-Map/src;JavaLib/src"/>
+  <property name="build" location="build"/>
+  <property name="deploy"  location="deploy"/>
+  
+  <path id="classpath">
+  	 <fileset dir="CheS-View/lib">
+        <include name="**/*.jar"/>
+     </fileset>
+	 <fileset dir="CheS-Map/lib">
+        <include name="**/*.jar"/>
+      </fileset>
+	 <fileset dir="JavaLib/lib">
+        <include name="**/*.jar"/>
+      </fileset>	  
+  </path>
+
+  <!-- Compile the java code from ${src} into ${build} -->
+  <target name="compile" description="compile the source" >
+    <javac srcdir="${src}" destdir="${build}" classpathref="classpath">
+	</javac>  
+  </target>
+  
+  <!-- Delete the ${build} and ${dist} directory trees -->
+  <target name="clean" description="clean up" >
+    <delete dir="${build}"/>
+    <delete dir="${deploy}"/>
+  </target>  
+
+  <!-- Build webstart version with external jars -->
+  <target name="build_external_jar" depends="compile" >
+    
+	<delete dir="${deploy}/ches-mapper_lib"/>
+    <mkdir dir="${deploy}/ches-mapper_lib"/>
+	<copy todir="${deploy}/ches-mapper_lib">
+		<fileset dir="CheS-View/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+  	</copy>
+	<copy todir="${deploy}/ches-mapper_lib">
+		<fileset dir="CheS-Map/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+  	</copy>
+	<copy todir="${deploy}/ches-mapper_lib">
+		<fileset dir="JavaLib/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+  	</copy>
+	
+	<mkdir dir="${deploy}"/>    
+	<copy file="ches-mapper.jnlp" todir="${deploy}"/>
+	
+	<tstamp>
+      <format property="TODAY" pattern="yyyy-MM-dd HH:mm:ss" />
+    </tstamp>
+	<path id="jar_classpath">
+  	 <fileset dir="${deploy}/ches-mapper_lib">
+		<include name="**/*.jar"/>
+     </fileset>
+    </path>
+	<manifestclasspath property="jar.classpath" jarfile="${deploy}/ches-mapper.jar">
+      <classpath refid="jar_classpath"/>
+    </manifestclasspath>   
+    <jar destfile="${deploy}/ches-mapper.jar">
+        <manifest>
+            <attribute name="Main-Class" value="gui.CheSViewer"/>
+			<attribute name="Class-Path" value="${jar.classpath}"/>
+			<attribute name="Built-Date" value="${TODAY}"/>
+        </manifest>
+        <fileset dir="${build}"/>
+        <fileset dir="CheS-View/data"/>
+        <fileset dir="JavaLib/data"/>
+        <fileset dir="CheS-Map/data"/>
+    </jar>
+
+</target>
+  
+
+</project>
