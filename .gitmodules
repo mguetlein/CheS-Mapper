@@ -1,9 +1,9 @@
 [submodule "CheS-Map"]
 	path = CheS-Map
-	url = git@github.com:mguetlein/CheS-Map.git
+	url = git://github.com/mguetlein/CheS-Map.git
 [submodule "CheS-View"]
 	path = CheS-View
-	url = git@github.com:mguetlein/CheS-View.git
+	url = git://github.com/mguetlein/CheS-View.git
 [submodule "JavaLib"]
 	path = JavaLib
-	url = git@github.com:mguetlein/JavaLib.git
+	url = git://github.com/mguetlein/JavaLib.git
