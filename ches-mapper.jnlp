@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<jnlp spec="1.0+" codebase="http://ortona.informatik.uni-freiburg.de/ches-mapper/" href="ches-mapper.jnlp">
+<jnlp spec="1.0+" href="ches-mapper.jnlp">
         <information>
                 <title>CheS-Mapper</title>
                 <vendor>Martin Guetlein</vendor>
@@ -27,5 +27,5 @@
 			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/servlet.jar' download='lazy' />
 			<jar href='ches-mapper_lib/jfreechart-1.0.13/lib/swtgraphics2d.jar' download='lazy' />
 		</resources>
-        <application-desc main-class="gui.CheSView" />
+        <application-desc main-class="gui.CheSViewer" />
 </jnlp>
