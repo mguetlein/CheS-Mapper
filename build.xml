@@ -55,7 +55,6 @@
   	</copy>
 	
 	<mkdir dir="${deploy}"/>    
-	<copy file="ches-mapper.jnlp" todir="${deploy}"/>
 	
 	<tstamp>
       <format property="TODAY" pattern="yyyy-MM-dd HH:mm:ss" />
