@@ -19,7 +19,6 @@ unless dir.start_with?(www)
   exit 1
 end
 url = File.join(host,dir.gsub(www,""))
-puts url
 
 jnlp = <<EOF
 <?xml version="1.0" encoding="utf-8"?> 
