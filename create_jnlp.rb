@@ -5,7 +5,7 @@ unless ARGV and ARGV.size>2 and File.directory?(ARGV[0])
   exit 1
 end
 
-dir = File.new(ARGV[0]).path
+dir = File.expand_path(ARGV[0])
 host = ARGV[1]
 www = ARGV[2]
 
