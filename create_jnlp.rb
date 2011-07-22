@@ -19,6 +19,7 @@ unless dir.start_with?(www)
   exit 1
 end
 url = File.join(host,dir.gsub(www,""))
+url+="/" unless url.end_with?("/")
 
 jnlp = <<EOF
 <?xml version="1.0" encoding="utf-8"?> 
@@ -43,6 +44,7 @@ EOF
 Dir.glob( File.join(dir,"ches-mapper_lib","**","*.jar") ) do |f|
     file = File.new(f)
     ff = file.path.gsub!(dir,"")
+    ff = ff[1..-1] if ff.start_with?("/")
     jnlp += "          <jar href='"+ff+"' download='lazy' />\n"
 end     
 jnlp += <<EOF
