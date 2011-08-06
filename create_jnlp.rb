@@ -45,7 +45,7 @@ Dir.glob( File.join(dir,"ches-mapper_lib","**","*.jar") ) do |f|
     file = File.new(f)
     ff = file.path.gsub!(dir,"")
     ff = ff[1..-1] if ff.start_with?("/")
-    jnlp += "          <jar href='"+ff+"' download='lazy' />\n"
+    jnlp += "          <jar href='"+ff+"' download='eager' />\n"
 end     
 jnlp += <<EOF
         </resources>
