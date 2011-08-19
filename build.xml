@@ -74,6 +74,7 @@
 			<attribute name="Built-Date" value="${TODAY}"/>
         </manifest>
         <fileset dir="${build}"/>
+		<fileset file="CheS-Map/VERSION"/>
         <fileset dir="CheS-View/data"/>
         <fileset dir="JavaLib/data"/>
         <fileset dir="CheS-Map/data"/>
@@ -119,10 +120,12 @@
             <attribute name="Rsrc-Main-Class" value="gui.CheSViewer"/>
             <attribute name="Class-Path" value="."/>
             <attribute name="Rsrc-Class-Path" value="./ ${jar.classpath.map} ${jar.classpath.view} ${jar.classpath.lib}"/>
+			<attribute name="Built-Date" value="${TODAY}"/>
         </manifest>
 		<zipfileset src="jar-in-jar-loader.zip"/>
         <fileset dir="${build}"/>
-        <fileset dir="CheS-View/data"/>
+		<fileset file="CheS-Map/VERSION"/>
+		<fileset dir="CheS-View/data"/>
         <fileset dir="JavaLib/data"/>
         <fileset dir="CheS-Map/data"/>
 		<zipfileset dir="${deploy}/ches-mapper_lib" includes="**/*.jar"/>
