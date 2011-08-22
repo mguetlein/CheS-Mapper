@@ -74,7 +74,7 @@
 			<attribute name="Built-Date" value="${TODAY}"/>
         </manifest>
         <fileset dir="${build}"/>
-		<fileset file="CheS-Map/VERSION"/>
+		<fileset file="VERSION"/>
 		<fileset dir="JavaLib" includes="data/"/>
 		<fileset dir="CheS-Map" includes="structural_alerts/"/>
     </jar>
@@ -123,7 +123,7 @@
         </manifest>
 		<zipfileset src="jar-in-jar-loader.zip"/>
         <fileset dir="${build}"/>
-		<fileset file="CheS-Map/VERSION"/>
+		<fileset file="VERSION"/>
 		<fileset dir="JavaLib" includes="data/"/>
 		<fileset dir="CheS-Map" includes="structural_alerts/"/>
 		<zipfileset dir="${deploy}/ches-mapper_lib" includes="**/*.jar"/>
