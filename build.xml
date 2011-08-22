@@ -75,9 +75,8 @@
         </manifest>
         <fileset dir="${build}"/>
 		<fileset file="CheS-Map/VERSION"/>
-        <fileset dir="CheS-View/data"/>
-        <fileset dir="JavaLib/data"/>
-        <fileset dir="CheS-Map/data"/>
+		<fileset dir="JavaLib" includes="data/"/>
+		<fileset dir="CheS-Map" includes="structural_alerts/"/>
     </jar>
 	</target>
 	
@@ -125,9 +124,8 @@
 		<zipfileset src="jar-in-jar-loader.zip"/>
         <fileset dir="${build}"/>
 		<fileset file="CheS-Map/VERSION"/>
-		<fileset dir="CheS-View/data"/>
-        <fileset dir="JavaLib/data"/>
-        <fileset dir="CheS-Map/data"/>
+		<fileset dir="JavaLib" includes="data/"/>
+		<fileset dir="CheS-Map" includes="structural_alerts/"/>
 		<zipfileset dir="${deploy}/ches-mapper_lib" includes="**/*.jar"/>
   	</jar>
 	</target>
