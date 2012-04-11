@@ -49,7 +49,7 @@ Dir.glob( File.join(dir,"ches-mapper_lib","**","*.jar") ) do |f|
 end     
 jnlp += <<EOF
         </resources>
-    <application-desc main-class="gui.CheSViewer" />
+    <application-desc main-class="gui.LaunchCheSMapper" />
 </jnlp>
 EOF
 
