@@ -38,7 +38,7 @@
 <div id="avmenu">
 <h2 class="hide">Site menu:</h2>
 <ul>
-  <li><a href="index.html">Overview</a></li>
+  <li><a href=".">Overview</a></li>
   <li><a href="../ches-mapper-wiki">Documentation&nbsp;&nbsp;<img src="iconExternalLink.gif" /img><br /></a></li>
   <li><a href="download.html">Download</a></li>
   <li><a href="https://github.com/mguetlein/ches-mapper">Source Code&nbsp;&nbsp;<img src="iconExternalLink.gif" /img><br />
