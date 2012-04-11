@@ -98,6 +98,9 @@ try {
   $f = fopen($file, 'r');
   $count = trim(fread($f,filesize($file)));
   fclose($f);
+  if ((int)$count<1 || strlen($count)>10){
+    throw new Exception('count invalid');
+  }
   $count_string = "started $count times";
   if (strlen($version_string)>0) {
     $version_string = "$version_string, ";
