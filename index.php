@@ -86,7 +86,7 @@ $version_string = "";
 try {
   $file = "release/latest/VERSION";
   $f = fopen($file, 'r');
-  $time = date ("M d Y",filemtime($file));
+  $time = date ("d M Y",filemtime($file));
   $version = trim(fread($f,filesize($file)));
   fclose($f);
   $version_string = "$version, last updated $time";
