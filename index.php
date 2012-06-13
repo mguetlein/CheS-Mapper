@@ -53,7 +53,7 @@
 </h2>
 <p>
 CheS-Mapper (Chemical Space Mapper) is a 3D-viewer for chemical datasets with small compounds.
-It has been published here: <a href="http://www.jcheminf.com/content/4/1/7">G&uuml;tlein, Karwath and Kramer (2012)</a>.
+It has been published here: <a href="http://www.jcheminf.com/content/4/1/7">G&uuml;tlein, Karwath and Kramer (2012)</a> (To support CheS-Mapper, please cite this article).
 <br>
 It can be used to analyze the relationship between the structure of chemical compounds, their physico-chemical properties, and biological or toxic effects. CheS-Mapper 
 divides large datasets into clusters of similar compounds and consequently arranges them in 3D space, such that their spatial proximity reflects their similarity.
