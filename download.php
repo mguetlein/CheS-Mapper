@@ -26,9 +26,9 @@
 
   
   <link rel="stylesheet" type="text/css" href="andreas00.css" media="screen,projection" />
-  <title>CheS-Mapper</title>
+  <title>CheS-Mapper - Download</title>
 
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">  
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">    
 </head><body>
 <div id="wrap">
 <div id="header">
@@ -40,7 +40,7 @@
 <ul>
   <li><a href=".">Overview</a></li>
   <li><a href="../ches-mapper-wiki">Documentation&nbsp;&nbsp;<img src="iconExternalLink.gif" /img><br /></a></li>
-  <li><a href="download.php">Download</a></li>
+  <li><a href="download.html">Download</a></li>
   <li><a href="https://github.com/mguetlein/ches-mapper">Source Code&nbsp;&nbsp;<img src="iconExternalLink.gif" /img><br />
     </a></li>
   <li><a href="acknowledgements.html">Acknowledgements</a></li>
@@ -48,28 +48,9 @@
 </ul>
 </div>
 <div id="contentwide">
-	
-<h2>Overview<br />
-</h2>
-<p>
-CheS-Mapper (Chemical Space Mapper) is a 3D-viewer for chemical datasets with small compounds.
-It has been published here: <a href="http://www.jcheminf.com/content/4/1/7">G&uuml;tlein, Karwath and Kramer (2012)</a> (To support CheS-Mapper, please cite this article).
-<br>
-It can be used to analyze the relationship between the structure of chemical compounds, their physico-chemical properties, and biological or toxic effects. CheS-Mapper 
-divides large datasets into clusters of similar compounds and consequently arranges them in 3D space, such that their spatial proximity reflects their similarity.
-<br> 	
-It is an open-source Java application, based on the Java libraries 
-<a href="http://jmol.sourceforge.net">Jmol</a>, 
-<a href="http://cdk.sourceforge.net">CDK</a>, 
-<a href="http://www.cs.waikato.ac.nz/ml/weka">WEKA</a>, and utilizes 
-<a href="http://openbabel.org">OpenBabel</a> and <a href="http://r-project.org">R</a>. 
-</p>
 
-<h3>Run Online<br />
-</h3>
-<p>Click here to start the latest version of the CheS-Mapper with Java Webstart:
-<br /> 
-<a href="release/latest/ches-mapper.jnlp"><font color="#000099"><big>>>Run CheS-Mapper<<</big></font></a>
+<h2>Download</h2>
+<p>The current version is avaiable for download here:<br/> <a href="release/latest/ches-mapper-complete.jar">ches-mapper-complete.jar</a>
 <small><b>
 <?php
 # to block warnings
@@ -98,38 +79,42 @@ try {
   $f = fopen($file, 'r');
   $count = trim(fread($f,filesize($file)));
   $count = preg_split( '/;/', $count );
-  $count = $count{0};
+  $count = $count{1};
   fclose($f);
   if ((int)$count<1 || strlen($count)>10){
     throw new Exception('count invalid');
   }
-  $count_string = "started $count times";
+  $count_string = "downloaded $count times";
   if (strlen($version_string)>0) {
     $version_string = "$version_string, ";
   }
 } catch (Exception $e) {}
-if (strlen($version_string)>0 || strlen($count_string)>0) {
+if (strlen($version_string)>0 || strlen($count_string)>0){
   $string = " ( $version_string$count_string )";
-} else {
+}
+else {
   $string = "";
 }
 echo $string; 
 ?>
 </b></small>
-<!-- <br>
-(Check the <a href="download.html">download</a> section for a standalone version or older releases.)
---> 
+<br /><br />
+Run '<span style="font-style: italic;">java -jar ches-mapper-complete.jar</span>' (or just double click on windows) to start the program.<br/>
+<br>
+Older downloadables are available <a href="release">here</a>.
 </p>
 
-<h3>Video Tutorial<br />
-</h3>
-<p>
-This video gives a brief introduction to the CheS-Mapper application, it takes about 4 and a half minutes.
-<p>
-</p>
-<iframe width="600" height="335" src="http://www.youtube.com/embed/HWALyzLcjF8" frameborder="0" allowfullscreen></iframe>
+<h3>Run Online</h3>
+<p>Click <a href="release/latest/ches-mapper.jnlp">ches-mapper.jnlp</a> to start
+the latest version of the CheS-Mapper with Java Webstart.<br>
+<br>
+You can run older versions online <a href="release">here</a>.
 </p>
 
+<h3>Source Code</h3>
+<p>The source code is available at <a href="release/latest/ches-mapper.jnlp">GitHub</a>.</p>
+
+<br />
 </div>
 <div id="footer">
 <p><b>Copyright 2012 Martin G&uuml;tlein</b> | Homepage design by <a href="http://andreasviklund.com">Andreas Viklund</a>.</p>
