@@ -99,7 +99,7 @@ echo $string;
 ?>
 </b></small>
 <br /><br />
-Run '<span style="font-style: italic;">java -jar ches-mapper-complete.jar</span>' (or just double click on windows) to start the program.<br/>
+Run '<span style="font-style: italic;">java -Xmx1g -jar ches-mapper-complete.jar</span>' (or just double click on windows) to start the program.<br/>
 <br>
 Older downloadables are available <a href="release">here</a>.
 </p>
