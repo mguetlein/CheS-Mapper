@@ -116,9 +116,7 @@ if (strlen($version_string)>0 || strlen($count_string)>0) {
 echo $string; 
 ?>
 </b></small>
-<!-- <br>
-(Check the <a href="download.html">download</a> section for a standalone version or older releases.)
---> 
+<br><small>(If the online version does not start, check the <a href="download.html">download</a> section for a standalone version.)</small> 
 </p>
 
 <h3>Video Tutorial<br />
