@@ -40,7 +40,7 @@
 <ul>
   <li><a href=".">Overview</a></li>
   <li><a href="../ches-mapper-wiki">Documentation&nbsp;&nbsp;<img src="iconExternalLink.gif" /img><br /></a></li>
-  <li><a href="download.html">Download</a></li>
+  <li><a href="download.php">Download</a></li>
   <li><a href="https://github.com/mguetlein/ches-mapper">Source Code&nbsp;&nbsp;<img src="iconExternalLink.gif" /img><br />
     </a></li>
   <li><a href="acknowledgements.html">Acknowledgements</a></li>
