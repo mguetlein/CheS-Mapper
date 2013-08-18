@@ -18,6 +18,6 @@ cd ..
 
 # execute ant in the ches-mapper directory
 ant
-# this creates two ches-mapper.jar files in the directory deploy
+# this creates two executable ches-mapper.jar files in the directory deploy
 
  
