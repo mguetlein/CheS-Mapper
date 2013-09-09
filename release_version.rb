@@ -53,7 +53,7 @@ end
   run "git checkout dev","../#{dir}"
 end
 
-new_v = "v#{major}.#{minor.to_i+1}.#{patch.to_i}"
+new_v = "v#{major}.#{minor.to_i+1}.#{0}"
 puts "set new dev version #{new_v}"
 File.open("VERSION", 'w') {|f| f.write(new_v) }
 
