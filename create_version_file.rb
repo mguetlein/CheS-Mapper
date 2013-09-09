@@ -1,13 +1,14 @@
 #!/usr/bin/ruby1.9.1
 
-require 'open3'
+#require 'open3'
 
-def run(cmd, wd=Dir.pwd)
-  puts wd+" $ "+cmd
-  Open3.popen3(cmd, :chdir=>wd) do |i,o,e,t|
-    puts o.read.chomp
-    puts e.read.chomp
-  end
+def run(cmd)
+  puts cmd
+  `#{cmd}`
+  #Open3.popen3(cmd, :chdir=>wd) do |i,o,e,t|
+  #  puts o.read.chomp
+  #  puts e.read.chomp
+  #end
 end
 
 run "git fetch --tags"
