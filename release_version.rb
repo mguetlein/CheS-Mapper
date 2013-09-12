@@ -4,15 +4,22 @@ require 'open3'
 
 def run(cmd, wd=Dir.pwd)
   puts wd+" $ "+cmd
+  res = nil
   Open3.popen3(cmd, :chdir=>wd) do |i,o,e,t|
-    puts o.read.chomp
+    res = o.read.chomp
+    puts res
     puts e.read.chomp
   end
+  res
 end
 
 if ARGV.size!=1
   $stderr.puts "version missing" 
   exit 1
+end
+
+["CheS-View", "CheS-Map", "JavaLib"].each do |f|
+  raise "#{f} is apparently a symlink, change back to submodule directories" if File.symlink?(f)
 end
 
 version = ARGV[0]
@@ -34,6 +41,8 @@ end
 
 ["CheS-View", "CheS-Map", "JavaLib", "ches-mapper"].each do |dir|
   puts dir
+  res = run("git branch")
+  raise "not on dev" unless res=~/\*\sdev/
   puts " merge dev into master"
   run "git checkout master","../#{dir}"
   run "git merge dev","../#{dir}"
