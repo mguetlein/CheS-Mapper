@@ -48,21 +48,26 @@
 </ul>
 </div>
 <div id="contentwide">
-	
+
+<h3>News<br />
+</h3>
+<p>
+CheS-Mapper 2.0 is released, the <a href="http://opentox.informatik.uni-freiburg.de/ches-mapper-wiki/index.php?title=Version_2.0">new features</a> are introduced in <a href="http://www.youtube.com/watch?v=4qU0SWXkKUI">Video Tutorial 3</a>.
+</p>
+</h2>
 <h2>Overview<br />
 </h2>
 <p>
 CheS-Mapper (Chemical Space Mapper) is a 3D-viewer for chemical datasets with small compounds.
-It has been published here: <a href="http://www.jcheminf.com/content/4/1/7">G&uuml;tlein, Karwath and Kramer (2012)</a> (To support CheS-Mapper, please cite this article).
+It has been published here: <a href="http://www.jcheminf.com/content/4/1/7">G&uuml;tlein, Karwath and Kramer (2012)</a>. To support CheS-Mapper, please cite this article.
 <br>
-It can be used to analyze the relationship between the structure of chemical compounds, their physico-chemical properties, and biological or toxic effects. CheS-Mapper 
-divides large datasets into clusters of similar compounds and consequently arranges them in 3D space, such that their spatial proximity reflects their similarity.
+The tool an be used to analyze the relationship between the structure of chemical compounds, their physico-chemical properties, and biological or toxic effects. CheS-Mapper embedds a dataset into 3D space, such that compounds that have similar feature values are close to each other. It can compute a range of descriptors and supports clustering and 3D alignment.
 <br> 	
 It is an open-source Java application, based on the Java libraries 
 <a href="http://jmol.sourceforge.net">Jmol</a>, 
 <a href="http://cdk.sourceforge.net">CDK</a>, 
 <a href="http://www.cs.waikato.ac.nz/ml/weka">WEKA</a>, and utilizes 
-<a href="http://openbabel.org">OpenBabel</a> and <a href="http://r-project.org">R</a>. 
+<a href="http://openbabel.org">OpenBabel</a> and <a href="http://r-project.org">R</a>.
 </p>
 
 <h3>Run Online<br />
@@ -122,10 +127,11 @@ echo $string;
 <h3>Video Tutorial<br />
 </h3>
 <p>
-This video gives a brief introduction to the CheS-Mapper application, it takes about 4 and a half minutes.
-<p>
+Tutorial 1 gives a brief introduction, Tutorial 3 shows SAR analysis and visual validation.
 </p>
-<iframe width="600" height="335" src="http://www.youtube.com/embed/HWALyzLcjF8" frameborder="0" allowfullscreen></iframe>
+<p>
+<iframe width="290" height="170" src="http://www.youtube.com/embed/HWALyzLcjF8" frameborder="0" allowfullscreen></iframe>
+<iframe width="290" height="170" src="https://www.youtube.com/embed/4qU0SWXkKUI" frameborder="0" allowfullscreen></iframe>
 </p>
 
 </div>
