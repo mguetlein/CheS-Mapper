@@ -136,7 +136,7 @@ Tutorial 1 gives a brief introduction, Tutorial 3 shows SAR analysis and visual 
 
 </div>
 <div id="footer">
-<p><b>Copyright 2013 Martin G&uuml;tlein</b> | Homepage design by <a href="http://andreasviklund.com">Andreas Viklund</a>.</p>
+<p><b>Copyright 2014 Martin G&uuml;tlein</b> | Homepage design by <a href="http://andreasviklund.com">Andreas Viklund</a>.</p>
 <p align="right"><a href="http://opentox.org"><img src="OT_small.png" /img></a></p>
 </div>
 </div>
