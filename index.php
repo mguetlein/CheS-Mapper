@@ -61,7 +61,7 @@ CheS-Mapper 2.0 is released, the <a href="http://opentox.informatik.uni-freiburg
 CheS-Mapper (Chemical Space Mapper) is a 3D-viewer for chemical datasets with small compounds.
 It has been published here: <a href="http://www.jcheminf.com/content/4/1/7">G&uuml;tlein, Karwath and Kramer (2012)</a>. To support CheS-Mapper, please cite this article.
 <br>
-The tool an be used to analyze the relationship between the structure of chemical compounds, their physico-chemical properties, and biological or toxic effects. CheS-Mapper embedds a dataset into 3D space, such that compounds that have similar feature values are close to each other. It can compute a range of descriptors and supports clustering and 3D alignment.
+The tool can be used to analyze the relationship between the structure of chemical compounds, their physico-chemical properties, and biological or toxic effects. CheS-Mapper embedds a dataset into 3D space, such that compounds that have similar feature values are close to each other. It can compute a range of descriptors and supports clustering and 3D alignment.
 <br> 	
 It is an open-source Java application, based on the Java libraries 
 <a href="http://jmol.sourceforge.net">Jmol</a>, 
