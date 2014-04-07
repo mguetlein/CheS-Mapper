@@ -121,7 +121,7 @@ if (strlen($version_string)>0 || strlen($count_string)>0) {
 echo $string; 
 ?>
 </b></small>
-<br><small>(If the online version does not start, check the <a href="download.php">download</a> section for a standalone version.)</small> 
+<br><small>(If the online version <a href="http://opentox.informatik.uni-freiburg.de/ches-mapper-wiki/index.php?title=Having_problems_with_CheS-Mapper%3F">does not start</a>, check the <a href="download.php">download</a> section for a standalone version.)</small> 
 </p>
 
 <h3>Video Tutorial<br />
