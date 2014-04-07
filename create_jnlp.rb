@@ -38,7 +38,7 @@ jnlp += <<EOF
                 <all-permissions/>
         </security>
         <resources>
-          <j2se version="1.6+" max-heap-size="1024M"/>
+          <j2se version="1.7+" max-heap-size="1024M"/>
           <jar href="ches-mapper.jar" main="true" />
 EOF
 Dir.glob( File.join(dir,"ches-mapper_lib","**","*.jar") ) do |f|
