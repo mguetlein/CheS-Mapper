@@ -52,7 +52,7 @@
 <h3>News<br />
 </h3>
 <p>
-CheS-Mapper 2.0 is released, the <a href="http://opentox.informatik.uni-freiburg.de/ches-mapper-wiki/index.php?title=Version_2.0">new features</a> are introduced in <a href="http://www.youtube.com/watch?v=4qU0SWXkKUI">Video Tutorial 3</a>.
+CheS-Mapper 2 is released, the <a href="http://opentox.informatik.uni-freiburg.de/ches-mapper-wiki/index.php?title=Main_Page#Version_History">new features</a> are introduced in <a href="http://www.youtube.com/watch?v=4qU0SWXkKUI">Video Tutorial 3</a>.
 </p>
 </h2>
 <h2>Overview<br />
