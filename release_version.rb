@@ -40,12 +40,14 @@ unless major.is_int? and minor.is_int? and patch.is_int?
 end
 
 ["CheS-View", "CheS-Map", "JavaLib", "ches-mapper"].each do |dir|
+#dir = "JavaLib"
+
   puts dir
   res = run("git branch")
   raise "not on dev" unless res=~/\*\sdev/
   puts " merge dev into master"
   run "git checkout master","../#{dir}"
-  run "git merge dev","../#{dir}"
+  res = run("git merge dev","../#{dir}")
   if dir=="ches-mapper"
       ["CheS-View", "CheS-Map", "JavaLib"].each do |sub|
         puts " update submodule"
@@ -54,8 +56,12 @@ end
         run "git add #{sub}", "../ches-mapper"
       end
   end
-  run "git commit -m \"merging dev for new release #{version}\"","../#{dir}"
-  run "git push origin master","../#{dir}"
+  if dir!="ches-mapper" and res=~/Already up-to-date./
+    puts "nothing to commit for #{dir}"
+  else
+    run "git commit -m \"merging dev for new release #{version}\"","../#{dir}"
+    run "git push origin master","../#{dir}"
+  end
   puts " set version tag"
   run "git tag -a #{version} -m \"version #{version}\"","../#{dir}"
   run "git push origin #{version}","../#{dir}"
