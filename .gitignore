@@ -2,3 +2,4 @@
 build
 deploy
 VERSION
+toggle_submodule_symlink.sh
