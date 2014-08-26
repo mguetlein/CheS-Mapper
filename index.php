@@ -72,10 +72,9 @@ It is an open-source Java application, based on the Java libraries
 
 <h3>Run Online<br />
 </h3>
-<p>Click here to start the latest version of the CheS-Mapper with Java Webstart:
+<p>Click here to start the latest version of the CheS-Mapper with Java Web Start:
 <br /> 
 <a href="release/latest/ches-mapper.jnlp"><font color="#000099"><big>>>Run CheS-Mapper<<</big></font></a>
-<small><b>
 <?php
 # to block warnings
 function handleError($errno, $errstr, $errfile, $errline, array $errcontext)
@@ -120,8 +119,7 @@ if (strlen($version_string)>0 || strlen($count_string)>0) {
 }
 echo $string; 
 ?>
-</b></small>
-<br><small>(If the online version <a href="http://opentox.informatik.uni-freiburg.de/ches-mapper-wiki/index.php?title=Having_problems_with_CheS-Mapper%3F">does not start</a>, check the <a href="download.php">download</a> section for a standalone version.)</small> 
+<br>If the online version does not start, <a href="http://opentox.informatik.uni-freiburg.de/ches-mapper-wiki/index.php?title=FAQ_-_Frequently_asked_questions">click here for troubleshooting</a> or <a href="download.php">download CheS-Mapper.</a> 
 </p>
 
 <h3>Video Tutorial<br />

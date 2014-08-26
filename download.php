@@ -50,8 +50,6 @@
 <div id="contentwide">
 
 <h2>Download</h2>
-<p>The current version is avaiable for download here:<br/> <a href="release/latest/ches-mapper-complete.jar">ches-mapper-complete.jar</a>
-<small><b>
 <?php
 # to block warnings
 function handleError($errno, $errstr, $errfile, $errline, array $errcontext)
@@ -90,25 +88,23 @@ try {
   }
 } catch (Exception $e) {}
 if (strlen($version_string)>0 || strlen($count_string)>0){
-  $string = " ( $version_string$count_string )";
+  $string = "The current version is $version_string$count_string:";
 }
 else {
-  $string = "";
+  $string = "The current version is available for download here:";
 }
 echo $string; 
 ?>
-</b></small>
-<br /><br />
-Run '<span style="font-style: italic;">java -Xmx1g -jar ches-mapper-complete.jar</span>' (or just double click on windows) to start the program.<br/>
-<br>
-Older downloadables are available <a href="release">here</a>.
+<UL>
+<LI><a href="release/latest/ches-mapper-complete.jar">ches-mapper-complete.jar</a> (Executable jar file, platform independent)</LI>
+<LI><a href="release/latest/ches-mapper.exe">ches-mapper.exe</a> (Windows executable)</LI>
+</UL>
+<p>
+Please find a description on how to run the software in the <a href="http://opentox.informatik.uni-freiburg.de/ches-mapper-wiki/index.php?title=FAQ_-_Frequently_asked_questions">documentation</a>.<br>Previous versions are available <a href="release">here</a>.
 </p>
 
 <h3>Run Online</h3>
-<p>Click <a href="release/latest/ches-mapper.jnlp">ches-mapper.jnlp</a> to start
-the latest version of the CheS-Mapper with Java Webstart.<br>
-<br>
-You can run older versions online <a href="release">here</a>.
+<p>On the <a href="index.php">overview</a> page, you can start CheS-Mapper directly with the browser with Java Web Start.
 </p>
 
 <h3>Source Code</h3>
