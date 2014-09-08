@@ -53,14 +53,14 @@ padding:0 0 0 3px;
 #avmenu {
 clear:left;
 float:left;
-width:150px;
+width:160px;
 margin:0 0 10px 0;
 padding:0;
 }
 
 #avmenu ul {
 list-style:none;
-width:150px;
+width:160px;
 margin:0 0 20px 0;
 padding:0;
 }
@@ -147,14 +147,14 @@ letter-spacing:-1px;
 /***** Main content *****/
 
 #content {
-margin:10px 140px 10px 160px;
+margin:10px 140px 10px 170px;
 padding:0;
 line-height:1.5em;
 text-align:left;
 }
 
 #contentwide {
-margin:10px 0 10px 160px;
+margin:10px 0 10px 170px;
 padding:0;
 line-height:1.5em;
 text-align:left;

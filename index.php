@@ -1,58 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
-  
-  <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-24573940-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-  </script>
-  
-  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-
-  
-  <meta name="description" content="" />
-
-  
-  <meta name="keywords" content="" />
-
-  
-  <meta name="author" content="Martin G&uuml;tlein / Original design: Andreas Viklund - http://andreasviklund.com/" />
-
-  
-  <link rel="stylesheet" type="text/css" href="andreas00.css" media="screen,projection" />
-  <title>CheS-Mapper</title>
-
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">  
-</head><body>
-<div id="wrap">
-<div id="header">
-<h1>CheS-Mapper<br/></h1>
-<p><strong>Chemical Space Mapping and Visualization in 3D</strong></p>
-</div>
-<div id="avmenu">
-<h2 class="hide">Site menu:</h2>
-<ul>
-  <li><a href=".">Overview</a></li>
-  <li><a href="../ches-mapper-wiki">Documentation&nbsp;&nbsp;<img src="iconExternalLink.gif" /img><br /></a></li>
-  <li><a href="download.php">Download</a></li>
-  <li><a href="https://github.com/mguetlein/ches-mapper">Source Code&nbsp;&nbsp;<img src="iconExternalLink.gif" /img><br />
-    </a></li>
-  <li><a href="acknowledgements.html">Acknowledgements</a></li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-<div id="contentwide">
+<?php include('prefix.html'); ?>
 
 <h3>News<br />
 </h3>
 <p>
-CheS-Mapper 2 is released, the <a href="http://opentox.informatik.uni-freiburg.de/ches-mapper-wiki/index.php?title=Main_Page#Version_History">new features</a> are introduced in <a href="http://www.youtube.com/watch?v=4qU0SWXkKUI">Video Tutorial 3</a>.
+Check out our new <a href="https://twitter.com/CheSMapper">twitter account</a> and the new <a href="contact.php">mailing list</a>.
 </p>
 </h2>
 <h2>Overview<br />
@@ -76,48 +27,8 @@ It is an open-source Java application, based on the Java libraries
 <br /> 
 <a href="release/latest/ches-mapper.jnlp"><font color="#000099"><big>>>Run CheS-Mapper<<</big></font></a>
 <?php
-# to block warnings
-function handleError($errno, $errstr, $errfile, $errline, array $errcontext)
-{
-    if (0 === error_reporting()) {
-        return false;
-    }
-    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
-}
-set_error_handler('handleError');
-# read version string
-$version_string = "";
-try {
-  $file = "release/latest/VERSION";
-  $f = fopen($file, 'r');
-  $time = date ("d M Y",filemtime($file));
-  $version = trim(fread($f,filesize($file)));
-  fclose($f);
-  $version_string = "$version, last updated $time";
-} catch (Exception $e) {}
-# read count string
-$count_string = "";
-try {
-  $file = "RUNCOUNT";
-  $f = fopen($file, 'r');
-  $count = trim(fread($f,filesize($file)));
-  $count = preg_split( '/;/', $count );
-  $count = $count{0};
-  fclose($f);
-  if ((int)$count<1 || strlen($count)>10){
-    throw new Exception('count invalid');
-  }
-  $count_string = "started $count times";
-  if (strlen($version_string)>0) {
-    $version_string = "$version_string, ";
-  }
-} catch (Exception $e) {}
-if (strlen($version_string)>0 || strlen($count_string)>0) {
-  $string = " ( $version_string$count_string )";
-} else {
-  $string = "";
-}
-echo $string; 
+require 'version.php';
+echo $webstart_info;
 ?>
 <br>If the online version does not start, <a href="http://opentox.informatik.uni-freiburg.de/ches-mapper-wiki/index.php?title=FAQ_-_Frequently_asked_questions">click here for troubleshooting</a> or <a href="download.php">download CheS-Mapper.</a> 
 </p>
@@ -132,11 +43,4 @@ Tutorial 1 gives a brief introduction, Tutorial 3 shows SAR analysis and visual 
 <iframe width="290" height="170" src="https://www.youtube.com/embed/4qU0SWXkKUI" frameborder="0" allowfullscreen></iframe>
 </p>
 
-</div>
-<div id="footer">
-<p><b>Copyright 2014 Martin G&uuml;tlein</b> | Homepage design by <a href="http://andreasviklund.com">Andreas Viklund</a>.</p>
-<p align="right"><a href="http://opentox.org"><img src="OT_small.png" /img></a></p>
-</div>
-</div>
-
-</body></html>
+<?php include('suffix.html'); ?>
