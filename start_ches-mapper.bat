@@ -1,1 +1,0 @@
-java -Xmx2g -jar ches-mapper-complete.jar
