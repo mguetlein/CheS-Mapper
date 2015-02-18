@@ -1,23 +1,8 @@
 
-# ------------- DOWNLOAD (LATEST) VERSION ------------
+source code for CheS-Mapper (see http://ches-mapper.org)
 
-git clone https://github.com/mguetlein/ches-mapper.git
-cd ches-mapper
-git pull origin master
+a 3D viewer for small molecule datasets
 
-# to checkout a particular older Version, use the following lines 
-# VERSION="v1.9.0"
-# git fetch --tags
-# git checkout tags/$VERSION
-
-git submodule init
-git submodule update 
-cd ..
-
-# ------------- COMPILE SOURCES ---------------
-
-# execute ant in the ches-mapper directory
-ant
-# this creates two executable ches-mapper.jar files in the directory deploy
+currently changing code architecture and setting up maven repository, documentation will follow
 
  
