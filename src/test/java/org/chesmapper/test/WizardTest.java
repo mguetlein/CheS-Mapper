@@ -31,6 +31,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.mg.javalib.gui.Selector;
+import org.mg.javalib.util.ArrayUtil;
 import org.mg.javalib.util.ThreadUtil;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -204,7 +205,8 @@ public class WizardTest
 
 		selector.setCategorySelected(PropertySetProvider.INSTANCE.getIntegratedCategory(), true);
 		set = selector.getSelected();
-		Assert.assertTrue(set.length == 5);
+		Assert.assertTrue("should be 5 selected elements, are: " + set.length + " " + ArrayUtil.toString(set),
+				set.length == 5);
 
 		nextButton.doClick();
 		Assert.assertTrue(wizard.getCurrentPanel() instanceof ClusterWizardPanel);

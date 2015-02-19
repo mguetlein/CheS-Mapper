@@ -174,7 +174,7 @@ public class MappingAndExportTest
 		MatchEngine matchEnginesAll[] = new MatchEngine[] { MatchEngine.OpenBabel, MatchEngine.CDK };
 
 		PropertySetShortcut featureTypesMany[] = { PropertySetShortcut.integrated, PropertySetShortcut.ob,
-				PropertySetShortcut.benigniBossa, PropertySetShortcut.cdkFunct, PropertySetShortcut.obMACCS };
+				PropertySetShortcut.benigniBossa, PropertySetShortcut.obMACCS, PropertySetShortcut.cdkFunct };
 		int minFreqMany[] = minFreqAll;
 		MatchEngine matchEnginesMany[] = matchEnginesAll;
 
@@ -244,7 +244,14 @@ public class MappingAndExportTest
 		}
 		else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_debug)
 		{
-			throw new IllegalStateException();
+			datasets = new DatasetConfig[] { D_INCHI };
+			clusterers = new DatasetClusterer[] { new ClustererProvider().getYesAlgorithm() };
+			embedders = new ThreeDEmbedder[] { WekaPCA3DEmbedder.INSTANCE_NO_PROBS };
+			featureTypes = new PropertySetShortcut[] { PropertySetShortcut.benigniBossa };
+			minFreq = new int[] { 0 };
+			matchEngines = new MatchEngine[] { MatchEngine.CDK };
+			mappingMode = new MappingCreator.Mode[] { MappingCreator.Mode.DirectlyUseAlgorithms };
+			testCaching = true;
 		}
 		else
 			throw new IllegalStateException();
@@ -341,9 +348,9 @@ public class MappingAndExportTest
 								}
 								else if (matchE == MatchEngine.CDK)
 								{
-									f.numFragments.put(D_CSV, 3);
+									f.numFragments.put(D_CSV, 6);
 									f.numFragments.put(D_INCHI, 0);
-									f.numFragments.put(D_SMI, 1);
+									f.numFragments.put(D_SMI, 2);
 									f.numFragments.put(D_SDF, 0);
 								}
 							}
@@ -359,9 +366,9 @@ public class MappingAndExportTest
 								else if (matchE == MatchEngine.CDK)
 								{
 									f.numFragments.put(D_INCHI, 0);
-									f.numFragments.put(D_SMI, 1);
+									f.numFragments.put(D_SMI, 2);
 									f.numFragments.put(D_SDF, 0);
-									f.numFragments.put(D_CSV, 3);
+									f.numFragments.put(D_CSV, 6);
 								}
 							}
 							else if (minF == 2)
@@ -444,14 +451,14 @@ public class MappingAndExportTest
 							if (minF == 0)
 							{
 								f.matchEngine = MatchEngine.CDK;
-								f.numFragments.put(D_INCHI, 6);
+								f.numFragments.put(D_INCHI, 20);
 								f.numFragments.put(D_CSV, 40);
 							}
 							else if (minF == 1)
 							{
 								f.matchEngine = MatchEngine.CDK;
 								f.numFragments.put(D_SDF, 14);
-								f.numFragments.put(D_INCHI, 6);
+								f.numFragments.put(D_INCHI, 20);
 								f.numFragments.put(D_CSV, 38);
 							}
 							else if (minF == 2)
@@ -530,12 +537,21 @@ public class MappingAndExportTest
 								System.err.println("\n================================================\n" + msg
 										+ "\n------------------------------------------------");
 
-								boolean testClustEmbedCombi = (clusterers.length == 1 && embedders.length == 1)
-										|| (clust == NoClusterer.INSTANCE && emb != Random3DEmbedder.INSTANCE)
-										|| (clust != NoClusterer.INSTANCE && emb == Random3DEmbedder.INSTANCE);
-								if (!testClustEmbedCombi)
+								boolean clustEnabled = clust != NoClusterer.INSTANCE;
+								boolean embEnabled = emb != Random3DEmbedder.INSTANCE;
+								boolean runTest = (clusterers.length == 1 && embedders.length == 1)
+										|| (!clustEnabled && embEnabled) || (clustEnabled && !embEnabled);
+								if (!runTest)
 									System.err.println("skipping cluster - embedding combination");
 								else
+								{
+									runTest = !(data == D_CSV && feat.shortName.toString().equals(
+											PropertySetShortcut.cdkFunct.toString()));
+									if (!runTest)
+										System.err.println("skipping cdk bug: https://sourceforge.net/p/cdk/bugs/1358");
+								}
+
+								if (runTest)
 								{
 									DescriptorSelection feats = DescriptorSelection.select(feat.shortName,
 											data.integratedFeature, null, null, null);
@@ -620,7 +636,7 @@ public class MappingAndExportTest
 		System.err.println(data.name + " " + feat.shortName + " " + feat.minFreq + " " + feat.matchEngine
 				+ " num-features:" + clustering.getFeatures().size());
 		if (feat.numFragments.containsKey(data))
-			Assert.assertTrue(clustering.getFeatures().size() == feat.numFragments.get(data));
+			Assert.assertEquals(feat.numFragments.get(data).intValue(), clustering.getFeatures().size());
 		else if (feat.shortName.equals(PropertySetShortcut.integrated.toString())
 				&& ObjectUtil.equals(data.integratedFeature, ""))
 			Assert.assertTrue(clustering.getFeatures().size() == 0);

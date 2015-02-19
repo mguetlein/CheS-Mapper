@@ -22,7 +22,10 @@ public class TestLauncher
 		MappingTest test = null;
 		try
 		{
-			test = MappingTest.valueOf(args[0]);
+			if (args[0].equals("debug"))
+				test = MappingTest.mapping_cache;
+			else
+				test = MappingTest.valueOf(args[0]);
 		}
 		catch (Exception e)
 		{
@@ -38,7 +41,7 @@ public class TestLauncher
 			result = junit.run(WizardTest.class);
 		else if (test == MappingTest.gui_viewer)
 			result = junit.run(ViewerTest.class);
-		else if (args[0].startsWith("mapping_"))
+		else if (test.toString().startsWith("mapping_"))
 		{
 			MAPPING_TEST = test;
 			result = junit.run(MappingAndExportTest.class);

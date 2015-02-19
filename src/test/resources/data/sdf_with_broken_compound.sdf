@@ -1,0 +1,336 @@
+
+
+
+ 12 12  0  0  0  0  0  0  0  0  1 V2000
+    0.0000   -2.3036    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3300   -2.3036    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9950   -1.1491    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3250   -1.1491    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9901   -2.3036    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3250   -3.4581    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9950   -3.4581    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3300   -4.6072    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+    3.9901   -4.6072    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+    5.3201   -2.3036    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+    3.9901    0.0000    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+    1.3300    0.0000    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2  3  2  0  0  0  0
+  2  7  1  0  0  0  0
+  3  4  1  0  0  0  0
+  3 12  1  0  0  0  0
+  4  5  2  0  0  0  0
+  4 11  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5 10  1  0  0  0  0
+  6  7  2  0  0  0  0
+  6  9  1  0  0  0  0
+  7  8  1  0  0  0  0
+M  END
+>  <DSSTox_RID>
+75945
+
+>  <DSSTox_CID>
+1106
+
+>  <DSSTox_Generic_SID>
+21106
+
+>  <DSSTox_FileID>
+629_Tox21S_v2a
+
+>  <STRUCTURE_Formula>
+C6HCl5O
+
+>  <STRUCTURE_MolecularWeight>
+266.3365
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+Pentachlorophenol
+
+>  <TestSubstance_CASRN>
+87-86-5
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+pentachlorophenol
+
+>  <STRUCTURE_SMILES>
+OC1=C(C(=C(C(=C1Cl)Cl)Cl)Cl)Cl
+
+>  <STRUCTURE_Parent_SMILES>
+OC1=C(C(=C(C(=C1Cl)Cl)Cl)Cl)Cl
+
+>  <STRUCTURE_InChIS>
+InChI=1S/C6HCl5O/c7-1-2(8)4(10)6(12)5(11)3(1)9/h12H
+
+>  <STRUCTURE_InChIKey>
+IZUPBVBPLAPZRR-UHFFFAOYSA-N
+
+>  <Substance_modify_yyyymmdd>
+20080429
+
+$$$$
+
+
+
+  0  0  0  0  0  0  0  0  0  0  1 V2000
+M  END
+>  <DSSTox_RID>
+75946
+
+>  <DSSTox_Generic_SID>
+21113
+
+>  <DSSTox_FileID>
+630_Tox21S_v2a
+
+>  <STRUCTURE_ChemicalType>
+no structure
+
+>  <STRUCTURE_Shown>
+no structure
+
+>  <TestSubstance_ChemicalName>
+Peppermint oil
+
+>  <TestSubstance_CASRN>
+8006-90-4
+
+>  <TestSubstance_Description>
+mixture or formulation
+
+>  <ChemicalNote>
+extract of Mentha piperita, Labiatae
+
+>  <STRUCTURE_InChIS>
+InChI=1S//
+
+>  <STRUCTURE_InChIKey>
+MOSFIJXAXDLOML-UHFFFAOYSA-N
+
+>  <Substance_modify_yyyymmdd>
+20080429
+
+$$$$
+
+
+
+ 30 31  0  0  0  0  0  0  0  0  1 V2000
+    3.4497   -4.1211    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.2929   -0.7850    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4497   -2.7784    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6065   -4.7821    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.2929   -4.7821    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.2929   -2.1173    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1568   -0.1239    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1568   -4.1211    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6065   -6.1144    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.2929   -6.1144    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7529   -4.1211    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1568   -2.7784    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -0.7850    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7529   -6.7755    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1568   -6.7755    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -4.7821    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9097   -4.7821    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -2.1173    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9097   -6.1144    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -6.1144    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.9961   -2.3239    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.3313   -2.3136    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.3351   -1.1568    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.0027   -1.1568    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.3285   -2.3239    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    7.0027   -3.4704    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    8.3351   -3.4704    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    4.9990   -2.3136    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    8.9961   -0.0103    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    6.3313    0.0000    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1  3  1  0  0  0  0
+  1  4  1  0  0  0  0
+  1  5  1  0  0  0  0
+  2  6  1  0  0  0  0
+  2  7  1  0  0  0  0
+  3  6  1  0  0  0  0
+  4  9  1  0  0  0  0
+  4 11  1  0  0  0  0
+  5  8  1  0  0  0  0
+  5 10  1  0  0  0  0
+  6 12  1  0  0  0  0
+  7 13  1  0  0  0  0
+  8 16  1  0  0  0  0
+  9 14  1  0  0  0  0
+ 10 15  1  0  0  0  0
+ 11 17  1  0  0  0  0
+ 12 18  1  0  0  0  0
+ 13 18  1  0  0  0  0
+ 14 19  1  0  0  0  0
+ 15 20  1  0  0  0  0
+ 16 20  1  0  0  0  0
+ 17 19  1  0  0  0  0
+ 21 23  1  0  0  0  0
+ 21 25  1  0  0  0  0
+ 21 27  2  0  0  0  0
+ 22 24  1  0  0  0  0
+ 22 26  2  0  0  0  0
+ 22 28  1  0  0  0  0
+ 23 24  2  0  0  0  0
+ 23 29  1  0  0  0  0
+ 24 30  1  0  0  0  0
+M  END
+>  <DSSTox_RID>
+75947
+
+>  <DSSTox_CID>
+1114
+
+>  <DSSTox_Generic_SID>
+21114
+
+>  <DSSTox_FileID>
+631_Tox21S_v2a
+
+>  <STRUCTURE_Formula>
+C23H39NO4
+
+>  <STRUCTURE_MolecularWeight>
+393.5601
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+complex maleic acid
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+Perhexiline maleate
+
+>  <TestSubstance_CASRN>
+6724-53-4
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <ChemicalNote>
+parent [6621-47-2]
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+2-(2,2-dicyclohexylethyl)piperidine (2Z)-but-2-enedioate
+
+>  <STRUCTURE_SMILES>
+OC(=O)\C=C/C(O)=O.C(C(C1CCCCC1)C2CCCCC2)C3CCCCN3
+
+>  <STRUCTURE_Parent_SMILES>
+C(C(C1CCCCC1)C2CCCCC2)C3CCCCN3
+
+>  <STRUCTURE_InChIS>
+InChI=1S/C19H35N.C4H4O4/c1-3-9-16(10-4-1)19(17-11-5-2-6-12-17)15-18-13-7-8-14-20-18;5-3(6)1-2-4(7)8/h16-20H,1-15H2;1-2H,(H,5,6)(H,7,8)/b;2-1-
+
+>  <STRUCTURE_InChIKey>
+JDZOTSLZMQDFLG-BTJKTKAUSA-N
+
+>  <Substance_modify_yyyymmdd>
+20080429
+
+$$$$
+
+
+
+ 13 13  0  0  0  0  0  0  0  0  1 V2000
+    9.2089    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0578   -0.6630    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0578   -1.9983    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9067    0.0000    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7556   -0.6630    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7556   -1.9983    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6044   -2.6614    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4533   -1.9983    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4533   -0.6630    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6044    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3022   -2.6614    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1511   -1.9983    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -2.6614    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2  3  2  0  0  0  0
+  2  4  1  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  2  0  0  0  0
+  5 10  1  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8  9  1  0  0  0  0
+  8 11  1  0  0  0  0
+  9 10  2  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <DSSTox_RID>
+75948
+
+>  <DSSTox_CID>
+1116
+
+>  <DSSTox_Generic_SID>
+21116
+
+>  <DSSTox_FileID>
+632_Tox21S_v2a
+
+>  <STRUCTURE_Formula>
+C10H13NO2
+
+>  <STRUCTURE_MolecularWeight>
+179.2157
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+Phenacetin
+
+>  <TestSubstance_CASRN>
+62-44-2
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+N-[4-(ethyloxy)phenyl]acetamide
+
+>  <STRUCTURE_SMILES>
+CC(=O)NC1=CC=C(C=C1)OCC
+
+>  <STRUCTURE_Parent_SMILES>
+CC(=O)NC1=CC=C(C=C1)OCC
+
+>  <STRUCTURE_InChIS>
+InChI=1S/C10H13NO2/c1-3-13-10-6-4-9(5-7-10)11-8(2)12/h4-7H,3H2,1-2H3,(H,11,12)
+
+>  <STRUCTURE_InChIKey>
+CPJSUEIXXCENMM-UHFFFAOYSA-N
+
+>  <Substance_modify_yyyymmdd>
+20080429
+
+$$$$

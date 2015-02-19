@@ -1,0 +1,271 @@
+Atomic Polarizabilities apol
+Bond Polarizabilities bpol
+Charged Partial Surface Areas PPSA-1
+Charged Partial Surface Areas PPSA-2
+Charged Partial Surface Areas PPSA-3
+Charged Partial Surface Areas PNSA-1
+Charged Partial Surface Areas PNSA-2
+Charged Partial Surface Areas PNSA-3
+Charged Partial Surface Areas DPSA-1
+Charged Partial Surface Areas DPSA-2
+Charged Partial Surface Areas DPSA-3
+Charged Partial Surface Areas FPSA-1
+Charged Partial Surface Areas FPSA-2
+Charged Partial Surface Areas FPSA-3
+Charged Partial Surface Areas FNSA-1
+Charged Partial Surface Areas FNSA-2
+Charged Partial Surface Areas FNSA-3
+Charged Partial Surface Areas WPSA-1
+Charged Partial Surface Areas WPSA-2
+Charged Partial Surface Areas WPSA-3
+Charged Partial Surface Areas WNSA-1
+Charged Partial Surface Areas WNSA-2
+Charged Partial Surface Areas WNSA-3
+Charged Partial Surface Areas RPCG
+Charged Partial Surface Areas RNCG
+Charged Partial Surface Areas RPCS
+Charged Partial Surface Areas RNCS
+Charged Partial Surface Areas THSA
+Charged Partial Surface Areas TPSA
+Charged Partial Surface Areas RHSA
+Charged Partial Surface Areas RPSA
+Hydrogen Bond Acceptors nHBAcc
+Hydrogen Bond Donors nHBDon
+Topological Polar Surface Area TopoPSA
+Acidic Group Count nAcid
+Aromatic Atoms Count naAromAtom
+Aromatic Bonds Count nAromBond
+Element Count nAtom
+Basic Group Count nBase
+Bond Count nB
+Largest Chain nAtomLC
+Largest Pi Chain nAtomP
+Longest Aliphatic Chain nAtomLAC
+Mannhold LogP MLogP
+Rotatable Bonds Count nRotB
+Lipinski's Rule of Five LipinskiFailures
+Molecular Weight MW
+XLogP XLogP
+Moreau-Broto Autocorrelation (charge) descriptors ATSc1
+Moreau-Broto Autocorrelation (charge) descriptors ATSc2
+Moreau-Broto Autocorrelation (charge) descriptors ATSc3
+Moreau-Broto Autocorrelation (charge) descriptors ATSc4
+Moreau-Broto Autocorrelation (charge) descriptors ATSc5
+Moreau-Broto Autocorrelation (mass) descriptors ATSm1
+Moreau-Broto Autocorrelation (mass) descriptors ATSm2
+Moreau-Broto Autocorrelation (mass) descriptors ATSm3
+Moreau-Broto Autocorrelation (mass) descriptors ATSm4
+Moreau-Broto Autocorrelation (mass) descriptors ATSm5
+Moreau-Broto Autocorrelation (polarizability) descriptors ATSp1
+Moreau-Broto Autocorrelation (polarizability) descriptors ATSp2
+Moreau-Broto Autocorrelation (polarizability) descriptors ATSp3
+Moreau-Broto Autocorrelation (polarizability) descriptors ATSp4
+Moreau-Broto Autocorrelation (polarizability) descriptors ATSp5
+Carbon Types C1SP1
+Carbon Types C2SP1
+Carbon Types C1SP2
+Carbon Types C2SP2
+Carbon Types C3SP2
+Carbon Types C1SP3
+Carbon Types C2SP3
+Carbon Types C3SP3
+Carbon Types C4SP3
+Chi Chain Indices SCH-3
+Chi Chain Indices SCH-4
+Chi Chain Indices SCH-5
+Chi Chain Indices SCH-6
+Chi Chain Indices SCH-7
+Chi Chain Indices VCH-3
+Chi Chain Indices VCH-4
+Chi Chain Indices VCH-5
+Chi Chain Indices VCH-6
+Chi Chain Indices VCH-7
+Chi Cluster Indices SC-3
+Chi Cluster Indices SC-4
+Chi Cluster Indices SC-5
+Chi Cluster Indices SC-6
+Chi Cluster Indices VC-3
+Chi Cluster Indices VC-4
+Chi Cluster Indices VC-5
+Chi Cluster Indices VC-6
+Chi Path-Cluster Indices SPC-4
+Chi Path-Cluster Indices SPC-5
+Chi Path-Cluster Indices SPC-6
+Chi Path-Cluster Indices VPC-4
+Chi Path-Cluster Indices VPC-5
+Chi Path-Cluster Indices VPC-6
+Chi Path Indices SP-0
+Chi Path Indices SP-1
+Chi Path Indices SP-2
+Chi Path Indices SP-3
+Chi Path Indices SP-4
+Chi Path Indices SP-5
+Chi Path Indices SP-6
+Chi Path Indices SP-7
+Chi Path Indices VP-0
+Chi Path Indices VP-1
+Chi Path Indices VP-2
+Chi Path Indices VP-3
+Chi Path Indices VP-4
+Chi Path Indices VP-5
+Chi Path Indices VP-6
+Chi Path Indices VP-7
+Eccentric Connectivity Index ECCEN
+FMF FMF
+Fragment Complexity fragC
+Hybridization Ratio HybRatio
+Kier and Hall kappa molecular shape indices Kier1
+Kier and Hall kappa molecular shape indices Kier2
+Kier and Hall kappa molecular shape indices Kier3
+Kier & Hall SMARTS khs.sLi
+Kier & Hall SMARTS khs.ssBe
+Kier & Hall SMARTS khs.ssssBe
+Kier & Hall SMARTS khs.ssBH
+Kier & Hall SMARTS khs.sssB
+Kier & Hall SMARTS khs.ssssB
+Kier & Hall SMARTS khs.sCH3
+Kier & Hall SMARTS khs.dCH2
+Kier & Hall SMARTS khs.ssCH2
+Kier & Hall SMARTS khs.tCH
+Kier & Hall SMARTS khs.dsCH
+Kier & Hall SMARTS khs.aaCH
+Kier & Hall SMARTS khs.sssCH
+Kier & Hall SMARTS khs.ddC
+Kier & Hall SMARTS khs.tsC
+Kier & Hall SMARTS khs.dssC
+Kier & Hall SMARTS khs.aasC
+Kier & Hall SMARTS khs.aaaC
+Kier & Hall SMARTS khs.ssssC
+Kier & Hall SMARTS khs.sNH3
+Kier & Hall SMARTS khs.sNH2
+Kier & Hall SMARTS khs.ssNH2
+Kier & Hall SMARTS khs.dNH
+Kier & Hall SMARTS khs.ssNH
+Kier & Hall SMARTS khs.aaNH
+Kier & Hall SMARTS khs.tN
+Kier & Hall SMARTS khs.sssNH
+Kier & Hall SMARTS khs.dsN
+Kier & Hall SMARTS khs.aaN
+Kier & Hall SMARTS khs.sssN
+Kier & Hall SMARTS khs.ddsN
+Kier & Hall SMARTS khs.aasN
+Kier & Hall SMARTS khs.ssssN
+Kier & Hall SMARTS khs.sOH
+Kier & Hall SMARTS khs.dO
+Kier & Hall SMARTS khs.ssO
+Kier & Hall SMARTS khs.aaO
+Kier & Hall SMARTS khs.sF
+Kier & Hall SMARTS khs.sSiH3
+Kier & Hall SMARTS khs.ssSiH2
+Kier & Hall SMARTS khs.sssSiH
+Kier & Hall SMARTS khs.ssssSi
+Kier & Hall SMARTS khs.sPH2
+Kier & Hall SMARTS khs.ssPH
+Kier & Hall SMARTS khs.sssP
+Kier & Hall SMARTS khs.dsssP
+Kier & Hall SMARTS khs.sssssP
+Kier & Hall SMARTS khs.sSH
+Kier & Hall SMARTS khs.dS
+Kier & Hall SMARTS khs.ssS
+Kier & Hall SMARTS khs.aaS
+Kier & Hall SMARTS khs.dssS
+Kier & Hall SMARTS khs.ddssS
+Kier & Hall SMARTS khs.sCl
+Kier & Hall SMARTS khs.sGeH3
+Kier & Hall SMARTS khs.ssGeH2
+Kier & Hall SMARTS khs.sssGeH
+Kier & Hall SMARTS khs.ssssGe
+Kier & Hall SMARTS khs.sAsH2
+Kier & Hall SMARTS khs.ssAsH
+Kier & Hall SMARTS khs.sssAs
+Kier & Hall SMARTS khs.sssdAs
+Kier & Hall SMARTS khs.sssssAs
+Kier & Hall SMARTS khs.sSeH
+Kier & Hall SMARTS khs.dSe
+Kier & Hall SMARTS khs.ssSe
+Kier & Hall SMARTS khs.aaSe
+Kier & Hall SMARTS khs.dssSe
+Kier & Hall SMARTS khs.ddssSe
+Kier & Hall SMARTS khs.sBr
+Kier & Hall SMARTS khs.sSnH3
+Kier & Hall SMARTS khs.ssSnH2
+Kier & Hall SMARTS khs.sssSnH
+Kier & Hall SMARTS khs.ssssSn
+Kier & Hall SMARTS khs.sI
+Kier & Hall SMARTS khs.sPbH3
+Kier & Hall SMARTS khs.ssPbH2
+Kier & Hall SMARTS khs.sssPbH
+Kier & Hall SMARTS khs.ssssPb
+Molecular Distance Edge MDEC-11
+Molecular Distance Edge MDEC-12
+Molecular Distance Edge MDEC-13
+Molecular Distance Edge MDEC-14
+Molecular Distance Edge MDEC-22
+Molecular Distance Edge MDEC-23
+Molecular Distance Edge MDEC-24
+Molecular Distance Edge MDEC-33
+Molecular Distance Edge MDEC-34
+Molecular Distance Edge MDEC-44
+Molecular Distance Edge MDEO-11
+Molecular Distance Edge MDEO-12
+Molecular Distance Edge MDEO-22
+Molecular Distance Edge MDEN-11
+Molecular Distance Edge MDEN-12
+Molecular Distance Edge MDEN-13
+Molecular Distance Edge MDEN-22
+Molecular Distance Edge MDEN-23
+Molecular Distance Edge MDEN-33
+Petitjean Number PetitjeanNumber
+Petitjean Shape Indices topoShape
+Petitjean Shape Indices geomShape
+VABC Volume Descriptor VABC
+Vertex adjacency information magnitude VAdjMat
+Weighted path descriptors WTPT-1
+Weighted path descriptors WTPT-2
+Weighted path descriptors WTPT-3
+Weighted path descriptors WTPT-4
+Weighted path descriptors WTPT-5
+Wiener Numbers WPATH
+Wiener Numbers WPOL
+Zagreb Index Zagreb
+BCUT BCUTw-1l
+BCUT BCUTw-1h
+BCUT BCUTc-1l
+BCUT BCUTc-1h
+BCUT BCUTp-1l
+BCUT BCUTp-1h
+WHIM Wlambda1.unity
+WHIM Wlambda2.unity
+WHIM Wlambda3.unity
+WHIM Wnu1.unity
+WHIM Wnu2.unity
+WHIM Wgamma1.unity
+WHIM Wgamma2.unity
+WHIM Wgamma3.unity
+WHIM Weta1.unity
+WHIM Weta2.unity
+WHIM Weta3.unity
+WHIM WT.unity
+WHIM WA.unity
+WHIM WV.unity
+WHIM WK.unity
+WHIM WG.unity
+WHIM WD.unity
+Gravitational Index GRAV-1
+Gravitational Index GRAV-2
+Gravitational Index GRAV-3
+Gravitational Index GRAVH-1
+Gravitational Index GRAVH-2
+Gravitational Index GRAVH-3
+Gravitational Index GRAV-4
+Gravitational Index GRAV-5
+Gravitational Index GRAV-6
+Length Over Breadth LOBMAX
+Length Over Breadth LOBMIN
+Moments of Inertia MOMI-X
+Moments of Inertia MOMI-Y
+Moments of Inertia MOMI-Z
+Moments of Inertia MOMI-XY
+Moments of Inertia MOMI-XZ
+Moments of Inertia MOMI-YZ
+Moments of Inertia MOMI-R

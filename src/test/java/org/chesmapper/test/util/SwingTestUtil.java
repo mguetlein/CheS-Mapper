@@ -117,7 +117,7 @@ public class SwingTestUtil
 		//		String contentMatchRegexp = "(?i).*" + contentMatch + ".*";
 		//		boolean b = content.matches(contentMatchRegexp);
 		Assert.assertTrue("content is '" + getAllText(d) + "', does not contain '" + contentMatch + "'", getAllText(d)
-				.matches("(?i).*" + contentMatch + ".*"));
+				.toLowerCase().contains(contentMatch.toLowerCase()));
 		JButton close = getButton(d, "Close");
 		Assert.assertNotNull(close);
 		SwingTestUtil.clickButton(close);
