@@ -6,3 +6,7 @@ toggle_submodule_symlink.sh
 target
 .classpath
 .settings
+<<<<<<< HEAD
+=======
+data
+>>>>>>> dev

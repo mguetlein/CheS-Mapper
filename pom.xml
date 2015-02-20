@@ -24,6 +24,12 @@
 		      <manifest>
 		        <mainClass>org.chesmapper.view.gui.LaunchCheSMapper</mainClass>
 		      </manifest>
+<<<<<<< HEAD
+=======
+		      <manifestEntries>
+                <Permissions>all-permissions</Permissions>
+            </manifestEntries>
+>>>>>>> dev
 		    </archive>
 		    <descriptorRefs>
 		      <descriptorRef>jar-with-dependencies</descriptorRef>
