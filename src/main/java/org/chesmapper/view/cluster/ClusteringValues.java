@@ -45,26 +45,19 @@ public class ClusteringValues
 		formattedSummarys.clear();
 	}
 
-<<<<<<< HEAD
-	private synchronized void updateNormalizedNumericValues(final NumericProperty p)
-=======
 	private synchronized Double[] updateNormalizedNumericSummary(final NumericProperty p)
->>>>>>> dev
 	{
 		Double d[] = new Double[clustering.getCompounds(true).size()];
 		int i = 0;
 		for (Compound m : clustering.getCompounds(true))
 			d[i++] = m.getDoubleValue(p);
 		summarys.put(p, DoubleArraySummary.create(d));
-<<<<<<< HEAD
-=======
 		return d;
 	}
 
 	private synchronized void updateNormalizedNumericValues(final NumericProperty p)
 	{
 		Double d[] = updateNormalizedNumericSummary(p);
->>>>>>> dev
 		Double valNorm[] = ArrayUtil.normalize(d, false);
 		Double valNormLog[] = ArrayUtil.normalizeLog(d, false);
 		specNumVals.put(p, ArrayUtil.toPrimitiveDoubleArray(ArrayUtil.removeNullValues(valNorm)));
@@ -78,11 +71,7 @@ public class ClusteringValues
 			clusterVals.put(c, new ArrayList<Double>());
 			clusterValsLog.put(c, new ArrayList<Double>());
 		}
-<<<<<<< HEAD
-		i = 0;
-=======
 		int i = 0;
->>>>>>> dev
 		for (Compound m : clustering.getCompounds(true))
 		{
 			normalizedValues.put(m, p, valNorm[i]);
@@ -128,11 +117,7 @@ public class ClusteringValues
 	{
 		if (!specificity.containsKeyPair(c, p))
 		{
-<<<<<<< HEAD
-			if (!summarys.containsKey(p))
-=======
 			if (!specNumVals.containsKey(p))
->>>>>>> dev
 				updateNormalizedNumericValues(p);
 			if (c.getNumCompounds() == 0)
 				specificity.put(c, p, CompoundPropertySpecificity.NO_SPEC_AVAILABLE);
@@ -150,11 +135,7 @@ public class ClusteringValues
 	{
 		if (!specificity.containsKeyPair(m, p))
 		{
-<<<<<<< HEAD
-			if (!summarys.containsKey(p))
-=======
 			if (!specNumVals.containsKey(p))
->>>>>>> dev
 				updateNormalizedNumericValues(p);
 			if (normalizedValues.get(m, p) == null)
 				specificity.put(m, p, CompoundPropertySpecificity.NO_SPEC_AVAILABLE);
@@ -171,11 +152,7 @@ public class ClusteringValues
 	HashMap<CompoundProperty, List<String>> specNomVals = new HashMap<CompoundProperty, List<String>>();
 	HashMap<CompoundProperty, long[]> specNomCounts = new HashMap<CompoundProperty, long[]>();
 
-<<<<<<< HEAD
-	private synchronized void updateNormalizedNominalValues(final NominalProperty p)
-=======
 	private synchronized CountedSet<String> updateNormalizedNominalSummary(final NominalProperty p)
->>>>>>> dev
 	{
 		String s[] = new String[clustering.getCompounds(true).size()];
 		int i = 0;
@@ -188,16 +165,12 @@ public class ClusteringValues
 			fSet.rename(key, p.getFormattedValue(key));
 		fSet.setToBack(p.getFormattedNullValue());
 		formattedSummarys.put(p, fSet);
-<<<<<<< HEAD
-
-=======
 		return set;
 	}
 
 	private synchronized void updateNormalizedNominalValues(final NominalProperty p)
 	{
 		CountedSet<String> set = updateNormalizedNominalSummary(p);
->>>>>>> dev
 		specNomVals.put(p, set.values());
 		specNomCounts.put(p, CompoundPropertySpecificity.nominalCounts(specNomVals.get(p), set));
 	}
@@ -206,11 +179,7 @@ public class ClusteringValues
 	{
 		if (!specificity.containsKeyPair(c, p))
 		{
-<<<<<<< HEAD
-			if (!summarys.containsKey(p))
-=======
 			if (!specNomVals.containsKey(p))
->>>>>>> dev
 				updateNormalizedNominalValues(p);
 			if (c.getNumCompounds() == 0)
 				specificity.put(c, p, CompoundPropertySpecificity.NO_SPEC_AVAILABLE);
@@ -226,11 +195,7 @@ public class ClusteringValues
 	{
 		if (!specificity.containsKeyPair(m, p))
 		{
-<<<<<<< HEAD
-			if (!summarys.containsKey(p))
-=======
 			if (!specNomVals.containsKey(p))
->>>>>>> dev
 				updateNormalizedNominalValues(p);
 			specificity.put(m, p, CompoundPropertySpecificity.nominalSpecificty(
 					CompoundPropertySpecificity.nominalCount(specNomVals.get(p), m.getStringValue(p)),
@@ -239,8 +204,6 @@ public class ClusteringValues
 		return specificity.get(m, p);
 	}
 
-<<<<<<< HEAD
-=======
 	private void updateNormalizedSummary(CompoundProperty p)
 	{
 		if (p instanceof NumericProperty)
@@ -249,7 +212,6 @@ public class ClusteringValues
 			updateNormalizedNominalSummary((NominalProperty) p);
 	}
 
->>>>>>> dev
 	private void updateNormalizedValues(CompoundProperty p)
 	{
 		if (p instanceof NumericProperty)
@@ -285,11 +247,7 @@ public class ClusteringValues
 	public synchronized String getSummaryStringValue(CompoundProperty p, boolean html)
 	{
 		if (!summarys.containsKey(p))
-<<<<<<< HEAD
-			updateNormalizedValues(p);
-=======
 			updateNormalizedSummary(p);
->>>>>>> dev
 		if (p instanceof NominalProperty)
 			return formattedSummarys.get(p).toString(html);
 		else
@@ -298,15 +256,9 @@ public class ClusteringValues
 
 	public synchronized void initFeatureNormalization()
 	{
-<<<<<<< HEAD
-		@SuppressWarnings("unchecked")
-		List<CompoundProperty> props = ListUtil.concat(clustering.getProperties(), clustering.getFeatures());
-		TaskProvider.debug("Compute feature value statistics");
-=======
 		TaskProvider.debug("Compute feature value statistics");
 		@SuppressWarnings("unchecked")
 		List<CompoundProperty> props = ListUtil.concat(clustering.getProperties(), clustering.getFeatures());
->>>>>>> dev
 		for (CompoundProperty p : props)
 			updateNormalizedValues(p);
 	}
@@ -337,11 +289,7 @@ public class ClusteringValues
 	public Double getDoubleValue(NumericProperty p)
 	{
 		if (!summarys.containsKey(p))
-<<<<<<< HEAD
-			updateNormalizedValues(p);
-=======
 			updateNormalizedSummary(p);
->>>>>>> dev
 		return ((DoubleArraySummary) summarys.get(p)).getMean();
 	}
 
@@ -349,11 +297,7 @@ public class ClusteringValues
 	public CountedSet<String> getNominalSummary(NominalProperty p)
 	{
 		if (!summarys.containsKey(p))
-<<<<<<< HEAD
-			updateNormalizedValues(p);
-=======
 			updateNormalizedSummary(p);
->>>>>>> dev
 		return (CountedSet<String>) summarys.get(p);
 	}
 }
