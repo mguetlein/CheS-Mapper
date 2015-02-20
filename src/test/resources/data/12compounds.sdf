@@ -1,0 +1,1854 @@
+
+
+
+ 20 22  0  0  0  0  0  0  0  0  1 V2000
+    5.3203   -2.3043    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9874   -2.3043    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3209   -3.4565    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9880   -3.4565    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3329   -2.3043    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9880   -1.1522    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3209   -1.1522    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9874    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -2.3043    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9874   -4.6086    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    5.3203   -4.6086    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9754   -3.4565    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3083   -3.4565    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9748   -2.3043    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.3077   -2.3043    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.9628   -3.4565    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.3077   -4.6086    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9748   -4.6086    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   11.2957   -3.4565    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9754   -1.1522    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1 12  1  0  0  0  0
+  1 20  2  0  0  0  0
+  2  3  2  0  0  0  0
+  2  7  1  0  0  0  0
+  3  4  1  0  0  0  0
+  3 10  1  0  0  0  0
+  4  5  2  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  1  0  0  0  0
+  6  7  2  0  0  0  0
+  7  8  1  0  0  0  0
+ 10 11  1  0  0  0  0
+ 11 12  2  0  0  0  0
+ 12 13  1  0  0  0  0
+ 13 14  1  0  0  0  0
+ 13 18  2  0  0  0  0
+ 14 15  2  0  0  0  0
+ 15 16  1  0  0  0  0
+ 16 17  2  0  0  0  0
+ 16 19  1  0  0  0  0
+ 17 18  1  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22308
+
+>  <DSSTox_CID>
+2308
+
+>  <DSSTox_Generic_SID>
+22308
+
+>  <DSSTox_FileID>
+1_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C15H10O5
+
+>  <STRUCTURE_MolecularWeight>
+270.2369
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+genistein
+
+>  <TestSubstance_CASRN>
+446-72-0
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <ChemicalNote>
+blank
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+5,7-dihydroxy-3-(4-hydroxyphenyl)-4H-chromen-4-one
+
+>  <STRUCTURE_SMILES>
+O=C(C(C(C=C3)=CC=C3O)=CO2)C1=C2C=C(O)C=C1O
+
+>  <STRUCTURE_Parent_SMILES>
+O=C(C(C(C=C3)=CC=C3O)=CO2)C1=C2C=C(O)C=C1O
+
+>  <STRUCTURE_InChI>
+InChI=1/C15H10O5/c16-9-3-1-8(2-4-9)11-7-20-13-6-10(17)5-12(18)14(13)15(11)19/h1-7,16-18H
+
+>  <STRUCTURE_InChIKey>
+TZBJGXHYKVUXJN-UHFFFAOYAH
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Phytoestrogens Isoflavones
+
+>  <ER_RBA>
+0.436
+
+>  <LOG_ER_RBA>
+-0.36
+
+>  <ActivityScore_NCTRER>
+66
+
+>  <ActivityOutcome_NCTRER>
+active
+
+>  <ActivityCategory_ER_RBA>
+active medium
+
+>  <Mean_ER_RBA_ChemClass>
+0.019
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+Isoflavones are relatively weak binders, RBA optimized when OH groups in 7,4' positions approx correspond to 4,4' OH positions in DES, a more frequent coincidence than in flavones and flavanones.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+1
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+1
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+2.84
+
+>  <Note_NCTRER>
+blank
+
+$$$$
+
+
+
+ 18 20  0  0  1  0  0  0  0  0  1 V2000
+    7.9737   -2.3040    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3073   -3.4560    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9746   -3.4560    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.3196   -2.3040    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9746   -1.1520    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3073   -1.1520    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9737    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.3064    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.9615   -1.1520    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.3064   -2.3040    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   11.2942   -1.1520    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9868   -2.3040    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3205   -3.4560    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9878   -3.4560    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3327   -2.3040    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9878   -1.1520    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3205   -1.1520    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -2.3040    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1  6  2  0  0  0  0
+  1 10  1  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  1  0  0  0  0
+  4  5  1  0  0  0  0
+  4 12  1  6  0  0  0
+  5  6  1  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  2  0  0  0  0
+  9 11  1  0  0  0  0
+ 12 13  2  0  0  0  0
+ 12 17  1  0  0  0  0
+ 13 14  1  0  0  0  0
+ 14 15  2  0  0  0  0
+ 15 16  1  0  0  0  0
+ 15 18  1  0  0  0  0
+ 16 17  2  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22309
+
+>  <DSSTox_CID>
+2309
+
+>  <DSSTox_Generic_SID>
+22309
+
+>  <DSSTox_FileID>
+2_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C15H14O3
+
+>  <STRUCTURE_MolecularWeight>
+242.2699
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+equol
+
+>  <TestSubstance_CASRN>
+531-95-3
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <ChemicalNote>
+stereochem
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+(3S)-3-(4-hydroxyphenyl)chroman-7-ol
+
+>  <STRUCTURE_SMILES>
+Oc1ccc(cc1)[C@@H]2Cc3ccc(O)cc3OC2
+
+>  <STRUCTURE_Parent_SMILES>
+Oc1ccc(cc1)[C@@H]2Cc3ccc(O)cc3OC2
+
+>  <STRUCTURE_InChI>
+InChI=1/C15H14O3/c16-13-4-1-10(2-5-13)12-7-11-3-6-14(17)8-15(11)18-9-12/h1-6,8,12,16-17H,7,9H2/t12-/m1/s1
+
+>  <STRUCTURE_InChIKey>
+ADFCQWZHKCXPAJ-GFCCVEGCBP
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Phytoestrogens Isoflavones
+
+>  <ER_RBA>
+0.151
+
+>  <LOG_ER_RBA>
+-0.82
+
+>  <ActivityScore_NCTRER>
+61
+
+>  <ActivityOutcome_NCTRER>
+active
+
+>  <ActivityCategory_ER_RBA>
+active medium
+
+>  <Mean_ER_RBA_ChemClass>
+0.019
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+Isoflavones are relatively weak binders, RBA optimized when OH groups in 7,4' positions approx correspond to 4,4' OH positions in DES, a more frequent coincidence than in flavones and flavanones.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+1
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+1
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+3.67
+
+$$$$
+
+
+
+ 19 21  0  0  0  0  0  0  0  0  1 V2000
+    5.3205   -2.3044    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9756   -1.1522    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3086   -1.1522    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9751    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.3080    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.9632   -1.1522    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.3080   -2.3044    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9751   -2.3044    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3086   -3.4566    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9756   -3.4566    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   11.2961   -1.1522    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    5.3205    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9875   -2.3044    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3211   -3.4566    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9881   -3.4566    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3329   -2.3044    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9881   -1.1522    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3211   -1.1522    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -2.3044    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1 10  2  0  0  0  0
+  1 13  1  0  0  0  0
+  2  3  1  0  0  0  0
+  2 12  2  0  0  0  0
+  3  4  1  0  0  0  0
+  3  8  2  0  0  0  0
+  4  5  2  0  0  0  0
+  5  6  1  0  0  0  0
+  6  7  2  0  0  0  0
+  6 11  1  0  0  0  0
+  7  8  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 13 14  2  0  0  0  0
+ 13 18  1  0  0  0  0
+ 14 15  1  0  0  0  0
+ 15 16  2  0  0  0  0
+ 16 17  1  0  0  0  0
+ 16 19  1  0  0  0  0
+ 17 18  2  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22310
+
+>  <DSSTox_CID>
+2310
+
+>  <DSSTox_Generic_SID>
+22310
+
+>  <DSSTox_FileID>
+3_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C15H10O4
+
+>  <STRUCTURE_MolecularWeight>
+254.2375
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+daidzein
+
+>  <TestSubstance_CASRN>
+486-66-8
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+7-hydroxy-3-(4-hydroxyphenyl)-4H-chromen-4-one
+
+>  <STRUCTURE_SMILES>
+O=C1C(C3=CC=C(O)C=C3)=COC2=C1C=CC(O)=C2
+
+>  <STRUCTURE_Parent_SMILES>
+O=C1C(C3=CC=C(O)C=C3)=COC2=C1C=CC(O)=C2
+
+>  <STRUCTURE_InChI>
+InChI=1/C15H10O4/c16-10-3-1-9(2-4-10)13-8-19-14-7-11(17)5-6-12(14)15(13)18/h1-8,16-17H
+
+>  <STRUCTURE_InChIKey>
+ZQSIJRDFPHDXIC-UHFFFAOYAG
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Phytoestrogens Isoflavones
+
+>  <ER_RBA>
+0.022
+
+>  <LOG_ER_RBA>
+-1.65
+
+>  <ActivityScore_NCTRER>
+52
+
+>  <ActivityOutcome_NCTRER>
+active
+
+>  <ActivityCategory_ER_RBA>
+active medium
+
+>  <Mean_ER_RBA_ChemClass>
+0.019
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+Isoflavones are relatively weak binders, RBA optimized when OH groups in 7,4' positions approx correspond to 4,4' OH positions in DES, a more frequent coincidence than in flavones and flavanones.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+1
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+1
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+2.55
+
+$$$$
+
+
+
+ 20 22  0  0  0  0  0  0  0  0  1 V2000
+    5.9863   -2.3107    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.6568   -1.1613    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9857   -1.1613    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.6442    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.9732    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.6437   -1.1613    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.9732   -2.3107    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.6442   -2.3107    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9857   -3.4601    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    6.6568   -3.4601    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   11.9726   -1.1613    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9863    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6573   -2.3107    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9869   -3.4601    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.6579   -3.4601    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9994   -2.3107    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.6579   -1.1613    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9869   -1.1613    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.6705   -2.3107    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -3.4601    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1 10  2  0  0  0  0
+  1 13  1  0  0  0  0
+  2  3  1  0  0  0  0
+  2 12  2  0  0  0  0
+  3  4  1  0  0  0  0
+  3  8  2  0  0  0  0
+  4  5  2  0  0  0  0
+  5  6  1  0  0  0  0
+  6  7  2  0  0  0  0
+  6 11  1  0  0  0  0
+  7  8  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 13 14  2  0  0  0  0
+ 13 18  1  0  0  0  0
+ 14 15  1  0  0  0  0
+ 15 16  2  0  0  0  0
+ 16 17  1  0  0  0  0
+ 16 19  1  0  0  0  0
+ 17 18  2  0  0  0  0
+ 19 20  1  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22311
+
+>  <DSSTox_CID>
+2311
+
+>  <DSSTox_Generic_SID>
+22311
+
+>  <DSSTox_FileID>
+4_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C16H12O4
+
+>  <STRUCTURE_MolecularWeight>
+268.2684
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+formononetin
+
+>  <TestSubstance_CASRN>
+485-72-3
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+7-hydroxy-3-(4-methoxyphenyl)-4H-chromen-4-one
+
+>  <STRUCTURE_SMILES>
+O=C1C(C3=CC=C(OC)C=C3)=COC2=C1C=CC(O)=C2
+
+>  <STRUCTURE_Parent_SMILES>
+O=C1C(C3=CC=C(OC)C=C3)=COC2=C1C=CC(O)=C2
+
+>  <STRUCTURE_InChI>
+InChI=1/C16H12O4/c1-19-12-5-2-10(3-6-12)14-9-20-15-8-11(17)4-7-13(15)16(14)18/h2-9,17H,1H3
+
+>  <STRUCTURE_InChIKey>
+HKQYGTCOTHHOMP-UHFFFAOYAJ
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Phytoestrogens Isoflavones
+
+>  <ER_RBA>
+0.00104
+
+>  <LOG_ER_RBA>
+-2.98
+
+>  <ActivityScore_NCTRER>
+37
+
+>  <ActivityOutcome_NCTRER>
+active
+
+>  <ActivityCategory_ER_RBA>
+active weak
+
+>  <Mean_ER_RBA_ChemClass>
+0.019
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+Isoflavones are relatively weak binders, RBA optimized when OH groups in 7,4' positions approx correspond to 4,4' OH positions in DES, a more frequent coincidence than in flavones and flavanones.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+1
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+1
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+3.11
+
+$$$$
+
+
+
+ 15 15  0  0  0  0  0  0  0  0  1 V2000
+    9.3099   -1.1575    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.9785   -2.3050    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.3099   -3.4625    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9828   -3.4625    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3142   -2.3050    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9828   -1.1575    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3142   -4.6101    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9871   -4.6101    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.3185   -3.4625    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9914   -3.4625    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3228   -2.3050    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9957   -2.3050    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3271   -1.1575    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -1.1575    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.9785    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0  0  0  0
+  1  6  1  0  0  0  0
+  1 15  1  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  4  7  1  0  0  0  0
+  5  6  2  0  0  0  0
+  7  8  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 10 11  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+ 13 14  1  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22312
+
+>  <DSSTox_CID>
+2312
+
+>  <DSSTox_Generic_SID>
+22312
+
+>  <DSSTox_FileID>
+5_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C14H22O
+
+>  <STRUCTURE_MolecularWeight>
+206.3238
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+4-n-octylphenol
+
+>  <TestSubstance_CASRN>
+1806-26-4
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+4-octylphenol
+
+>  <STRUCTURE_SMILES>
+OC1=CC=C(CCCCCCCC)C=C1
+
+>  <STRUCTURE_Parent_SMILES>
+OC1=CC=C(CCCCCCCC)C=C1
+
+>  <STRUCTURE_InChI>
+InChI=1/C14H22O/c1-2-3-4-5-6-7-8-13-9-11-14(15)12-10-13/h9-12,15H,2-8H2,1H3
+
+>  <STRUCTURE_InChIKey>
+NTDQQZYCCIDJRK-UHFFFAOYAM
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Phenols Alkyl
+
+>  <ER_RBA>
+0.0049
+
+>  <LOG_ER_RBA>
+-2.31
+
+>  <ActivityScore_NCTRER>
+44
+
+>  <ActivityOutcome_NCTRER>
+active
+
+>  <ActivityCategory_ER_RBA>
+active weak
+
+>  <Mean_ER_RBA_ChemClass>
+0.00088
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+Alkyl phenols are very weak binders, log RBA correlates with log P for para substituted phenols; RBA increases with chain length to maximum value of 0.031 in 4-nonylphenol.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+1
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+0
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+5.5
+
+$$$$
+
+
+
+ 18 19  0  0  0  0  0  0  0  0  1 V2000
+    6.9097   -1.9915    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0626   -2.6607    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0626   -3.9910    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9097   -4.6521    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7567   -3.9910    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7567   -2.6607    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6038   -1.9915    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6038   -0.6611    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4589    0.0000    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+    5.7567    0.0000    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+    3.4589   -2.6607    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4589   -3.9910    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3059   -4.6521    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1530   -3.9910    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1530   -2.6607    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3059   -1.9915    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -4.6521    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+    6.9097   -0.6611    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1  6  2  0  0  0  0
+  1 18  1  0  0  0  0
+  2  3  2  0  0  0  0
+  3  4  1  0  0  0  0
+  4  5  2  0  0  0  0
+  5  6  1  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  7 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  8 10  1  0  0  0  0
+ 11 12  2  0  0  0  0
+ 11 16  1  0  0  0  0
+ 12 13  1  0  0  0  0
+ 13 14  2  0  0  0  0
+ 14 15  1  0  0  0  0
+ 14 17  1  0  0  0  0
+ 15 16  2  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22313
+
+>  <DSSTox_CID>
+2313
+
+>  <DSSTox_Generic_SID>
+22313
+
+>  <DSSTox_FileID>
+6_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C14H8Cl4
+
+>  <STRUCTURE_MolecularWeight>
+318.0253
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+o,p'-DDE
+
+>  <TestSubstance_CASRN>
+3424-82-6
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+1-chloro-2-[2,2-dichloro-1-(4-chlorophenyl)vinyl]benzene
+
+>  <STRUCTURE_SMILES>
+C1(C=CC=CC=1C(=C(Cl)Cl)C2=CC=C(C=C2)Cl)Cl
+
+>  <STRUCTURE_Parent_SMILES>
+C1(C=CC=CC=1C(=C(Cl)Cl)C2=CC=C(C=C2)Cl)Cl
+
+>  <STRUCTURE_InChI>
+InChI=1/C14H8Cl4/c15-10-7-5-9(6-8-10)13(14(17)18)11-3-1-2-4-12(11)16/h1-8H
+
+>  <STRUCTURE_InChIKey>
+ZDYJWDIWLRZXDB-UHFFFAOYAB
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Diphenylmethanes DDTs
+
+>  <ER_RBA>
+0
+
+>  <LOG_ER_RBA>
+-5000
+
+>  <ActivityScore_NCTRER>
+5
+
+>  <ActivityOutcome_NCTRER>
+inconclusive
+
+>  <ActivityCategory_ER_RBA>
+slight binder
+
+>  <Mean_ER_RBA_ChemClass>
+0.0087
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+DDTs are strongest binders in class, 4-OH or o,p'-Cl critical; highest RBA with dichloroethenyl substitution at bridge atom adding rigidity, mimicking 7a substitution on E2 and enhancing H-bonding.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+0
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+0
+
+>  <F6_OtherKeyFeatures>
+1
+
+>  <LOGP>
+6
+
+$$$$
+
+
+
+ 28 28  0  0  0  0  0  0  0  0  1 V2000
+    7.9814   -3.4555    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3086   -4.6023    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9814   -5.7490    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.3116   -5.7490    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.9691   -6.9111    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.3116   -8.0578    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9814   -8.0578    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.3086   -6.9111    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.9691   -4.6023    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   11.2993   -4.6023    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    9.3116   -3.4555    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    9.9691   -2.2935    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   11.2993   -2.2935    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   11.9721   -1.1467    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   13.3023   -1.1467    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   13.9598    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   15.2900    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   11.9721   -3.4555    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   13.3023   -3.4555    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9784   -4.6023    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    5.3209   -3.4555    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9907   -3.4555    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3179   -4.6023    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9877   -4.6023    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3302   -5.7490    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -5.7490    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3179   -2.2935    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9877   -2.2935    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0  0  0  0
+  2  3  1  0  0  0  0
+  2 20  1  0  0  0  0
+  3  4  2  0  0  0  0
+  3  8  1  0  0  0  0
+  4  5  1  0  0  0  0
+  4  9  1  0  0  0  0
+  5  6  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  9 10  2  0  0  0  0
+  9 11  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+ 13 14  1  0  0  0  0
+ 13 18  1  0  0  0  0
+ 14 15  1  0  0  0  0
+ 15 16  1  0  0  0  0
+ 16 17  1  0  0  0  0
+ 18 19  1  0  0  0  0
+ 20 21  1  0  0  0  0
+ 21 22  1  0  0  0  0
+ 22 23  1  0  0  0  0
+ 22 27  1  0  0  0  0
+ 23 24  1  0  0  0  0
+ 24 25  1  0  0  0  0
+ 25 26  1  0  0  0  0
+ 27 28  1  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22314
+
+>  <DSSTox_CID>
+607
+
+>  <DSSTox_Generic_SID>
+20607
+
+>  <DSSTox_FileID>
+7_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C24H38O4
+
+>  <STRUCTURE_MolecularWeight>
+390.5561
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+bis(2-ethylhexyl)phthalate
+
+>  <TestSubstance_CASRN>
+117-81-7
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+bis(2-ethylhexyl) phthalate
+
+>  <STRUCTURE_SMILES>
+O=C(C1=C(C=CC=C1)C(=O)OCC(CCCC)CC)OCC(CCCC)CC
+
+>  <STRUCTURE_Parent_SMILES>
+O=C(C1=C(C=CC=C1)C(=O)OCC(CCCC)CC)OCC(CCCC)CC
+
+>  <STRUCTURE_InChI>
+InChI=1/C24H38O4/c1-5-9-13-19(7-3)17-27-23(25)21-15-11-12-16-22(21)24(26)28-18-20(8-4)14-10-6-2/h11-12,15-16,19-20H,5-10,13-14,17-18H2,1-4H3
+
+>  <STRUCTURE_InChIKey>
+BJQHLKABXJIVAM-UHFFFAOYAB
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Misc
+
+>  <ER_RBA>
+0
+
+>  <LOG_ER_RBA>
+-5000
+
+>  <ActivityScore_NCTRER>
+5
+
+>  <ActivityOutcome_NCTRER>
+inconclusive
+
+>  <ActivityCategory_ER_RBA>
+slight binder
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+No key features for ER binding.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+0
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+0
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+8.39
+
+$$$$
+
+
+
+ 23 24  0  0  1  0  0  0  0  0  1 V2000
+    3.4409   -1.9794    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4409   -3.3373    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3016   -1.3234    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3016   -3.9932    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1623   -1.9794    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1623   -3.3373    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6032   -1.3234    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7424   -2.0139    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6032   -3.9932    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7424   -3.3373    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9047   -1.3234    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0440   -2.0139    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9047   -3.9932    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0440   -3.3373    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.2063   -1.3234    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.3456   -2.0139    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.2063   -3.9932    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.3456   -3.3373    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3016    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -3.9932    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6032    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   11.5079   -3.9932    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9047    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  3  1  0  0  0  0
+  1  7  1  0  0  0  0
+  1  2  2  0  0  0  0
+  2  4  1  0  0  0  0
+  2  9  1  0  0  0  0
+  3  5  2  0  0  0  0
+  3 19  1  0  0  0  0
+  4  6  2  0  0  0  0
+  5  6  1  0  0  0  0
+  6 20  1  0  0  0  0
+  7  8  1  0  0  0  0
+  7 21  2  0  0  0  0
+  8 11  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 10 13  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 11 23  1  1  0  0  0
+ 12 15  1  0  0  0  0
+ 13 14  1  0  0  0  0
+ 14 17  1  0  0  0  0
+ 15 16  1  0  0  0  0
+ 16 18  1  0  0  0  0
+ 17 18  1  0  0  0  0
+ 18 22  1  6  0  0  0
+M  END
+>  <DSSTox_RID>
+22315
+
+>  <DSSTox_CID>
+2315
+
+>  <DSSTox_Generic_SID>
+22315
+
+>  <DSSTox_FileID>
+8_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C18H26O5
+
+>  <STRUCTURE_MolecularWeight>
+322.396
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+alpha zearalanol
+
+>  <TestSubstance_CASRN>
+26538-44-3
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <ChemicalNote>
+stereochem
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+(3S,7R)-7,14,16-trihydroxy-3-methyl-3,4,5,6,7,8,9,10,11,12-decahydro-1H-2-benzoxacyclotetradecin-1-one
+
+>  <STRUCTURE_SMILES>
+Oc1cc(O)cc2CCCCC[C@@H](O)CCC[C@H](C)OC(=O)c12
+
+>  <STRUCTURE_Parent_SMILES>
+Oc1cc(O)cc2CCCCC[C@@H](O)CCC[C@H](C)OC(=O)c12
+
+>  <STRUCTURE_InChI>
+InChI=1/C18H26O5/c1-12-6-5-9-14(19)8-4-2-3-7-13-10-15(20)11-16(21)17(13)18(22)23-12/h10-12,14,19-21H,2-9H2,1H3/t12-,14+/m0/s1
+
+>  <STRUCTURE_InChIKey>
+DWTTZBARDOXEAM-GXTWGEPZBO
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Phytoestrogens Mycoestrogens
+
+>  <ER_RBA>
+30.2
+
+>  <LOG_ER_RBA>
+1.48
+
+>  <ActivityScore_NCTRER>
+87
+
+>  <ActivityOutcome_NCTRER>
+active
+
+>  <ActivityCategory_ER_RBA>
+active strong
+
+>  <Mean_ER_RBA_ChemClass>
+0.019
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+Mycoestrogens are most active phytoestrogens; for same framework with 7-OH, RBAs are 100-fold higher for a isomers (do-o approx 11A) , as in E2 and DES, than for b isomers (do-o approx 10A).
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+1
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+0
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+5.37
+
+>  <Note_NCTRER>
+same 2D structure beta form [42422-68-4]
+
+$$$$
+
+
+
+ 22 24  0  0  0  0  0  0  0  0  1 V2000
+    4.6008    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6008   -1.3264    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4506   -1.9895    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4506   -3.3159    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3004   -3.9894    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1502   -3.3159    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1502   -1.9895    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3004   -1.3264    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3004    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -3.9894    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6008   -3.9894    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7614   -3.3159    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7614   -1.9895    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9115   -1.3264    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9115   -3.9894    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0617   -3.3159    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.2119   -3.9894    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.2119   -5.3158    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0617   -5.9790    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9115   -5.3158    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.3621   -5.9790    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   10.3621   -3.3159    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0  0  0  0
+  2  3  1  0  0  0  0
+  2 13  1  0  0  0  0
+  3  4  2  0  0  0  0
+  3  8  1  0  0  0  0
+  4  5  1  0  0  0  0
+  4 11  1  0  0  0  0
+  5  6  2  0  0  0  0
+  6  7  1  0  0  0  0
+  6 10  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8  9  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  2  0  0  0  0
+ 12 15  1  0  0  0  0
+ 13 14  1  0  0  0  0
+ 15 16  2  0  0  0  0
+ 15 20  1  0  0  0  0
+ 16 17  1  0  0  0  0
+ 17 18  2  0  0  0  0
+ 17 22  1  0  0  0  0
+ 18 19  1  0  0  0  0
+ 18 21  1  0  0  0  0
+ 19 20  2  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22316
+
+>  <DSSTox_CID>
+1218
+
+>  <DSSTox_Generic_SID>
+21218
+
+>  <DSSTox_FileID>
+9_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C15H10O7
+
+>  <STRUCTURE_MolecularWeight>
+302.2357
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+quercetin
+
+>  <TestSubstance_CASRN>
+117-39-5
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-4H-chromen-4-one
+
+>  <STRUCTURE_SMILES>
+O=C1C2=C(C=C(C=C2O)O)OC(=C1O)C3=CC(=C(C=C3)O)O
+
+>  <STRUCTURE_Parent_SMILES>
+O=C1C2=C(C=C(C=C2O)O)OC(=C1O)C3=CC(=C(C=C3)O)O
+
+>  <STRUCTURE_InChI>
+InChI=1/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H
+
+>  <STRUCTURE_InChIKey>
+REFJWTPEDVJJIY-UHFFFAOYAW
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Phytoestrogens Flavones
+
+>  <ER_RBA>
+0
+
+>  <LOG_ER_RBA>
+-10000
+
+>  <ActivityScore_NCTRER>
+0
+
+>  <ActivityOutcome_NCTRER>
+inactive
+
+>  <ActivityCategory_ER_RBA>
+inactive
+
+>  <Mean_ER_RBA_ChemClass>
+0.019
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+Flavones are weak binders, RBA optimized when OH groups in 6,4' positions approximately correspond to 4,4' OH positions in DES as in 3,6,4'-trihydroxyflavone.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+1
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+1
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+1.48
+
+$$$$
+
+
+
+ 21 23  0  0  0  0  0  0  0  0  1 V2000
+    5.7607   -3.3155    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7607   -1.9893    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6002   -1.3262    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6002    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4502   -1.9893    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4502   -3.3155    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6002   -3.9890    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3001   -3.9890    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1501   -3.3155    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1501   -1.9893    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3001   -1.3262    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -3.9890    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9107   -1.3262    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9107   -3.9890    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0608   -3.3155    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.2108   -3.9890    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.3609   -3.3155    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    9.2108   -5.3151    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0608   -5.9782    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.9107   -5.3151    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.3609   -5.9782    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0  0  0  0
+  1  7  1  0  0  0  0
+  1 14  1  0  0  0  0
+  2  3  1  0  0  0  0
+  2 13  1  0  0  0  0
+  3  4  2  0  0  0  0
+  3  5  1  0  0  0  0
+  5  6  2  0  0  0  0
+  5 11  1  0  0  0  0
+  6  7  1  0  0  0  0
+  6  8  1  0  0  0  0
+  8  9  2  0  0  0  0
+  9 10  1  0  0  0  0
+  9 12  1  0  0  0  0
+ 10 11  2  0  0  0  0
+ 14 15  2  0  0  0  0
+ 14 20  1  0  0  0  0
+ 15 16  1  0  0  0  0
+ 16 17  1  0  0  0  0
+ 16 18  2  0  0  0  0
+ 18 19  1  0  0  0  0
+ 18 21  1  0  0  0  0
+ 19 20  2  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22317
+
+>  <DSSTox_CID>
+2317
+
+>  <DSSTox_Generic_SID>
+22317
+
+>  <DSSTox_FileID>
+10_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C15H10O6
+
+>  <STRUCTURE_MolecularWeight>
+286.2404
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+fisetin
+
+>  <TestSubstance_CASRN>
+528-48-3
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+2-(3,4-dihydroxyphenyl)-3,7-dihydroxy-4H-chromen-4-one
+
+>  <STRUCTURE_SMILES>
+C1(=C(C(=O)C2=C(O1)C=C(C=C2)O)O)C3=CC(O)=C(C=C3)O
+
+>  <STRUCTURE_Parent_SMILES>
+C1(=C(C(=O)C2=C(O1)C=C(C=C2)O)O)C3=CC(O)=C(C=C3)O
+
+>  <STRUCTURE_InChI>
+InChI=1/C15H10O6/c16-8-2-3-9-12(6-8)21-15(14(20)13(9)19)7-1-4-10(17)11(18)5-7/h1-6,16-18,20H
+
+>  <STRUCTURE_InChIKey>
+XHEFDIBZLJXQHF-UHFFFAOYAQ
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Phytoestrogens Flavones
+
+>  <ER_RBA>
+0.00446
+
+>  <LOG_ER_RBA>
+-2.35
+
+>  <ActivityScore_NCTRER>
+44
+
+>  <ActivityOutcome_NCTRER>
+active
+
+>  <ActivityCategory_ER_RBA>
+active weak
+
+>  <Mean_ER_RBA_ChemClass>
+0.019
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+Flavones are weak binders, RBA optimized when OH groups in 6,4' positions approximately correspond to 4,4' OH positions in DES as in 3,6,4'-trihydroxyflavone.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+1
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+1
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+1.18
+
+$$$$
+
+
+
+ 17 19  0  0  0  0  0  0  0  0  1 V2000
+    4.6485   -3.4561    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9791   -3.4561    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.6444   -2.3070    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9750   -2.3070    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.6404   -3.4561    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    7.9750   -4.6053    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.6444   -4.6053    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.9791   -1.1492    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6485   -1.1492    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9918   -2.3070    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.6612   -2.3070    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9959   -3.4561    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.6653   -3.4561    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -2.3070    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.6653   -1.1492    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9959   -1.1492    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.6444    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1 10  1  0  0  0  0
+  2  3  2  0  0  0  0
+  2  7  1  0  0  0  0
+  3  4  1  0  0  0  0
+  3  8  1  0  0  0  0
+  4  5  2  0  0  0  0
+  5  6  1  0  0  0  0
+  6  7  2  0  0  0  0
+  8  9  1  0  0  0  0
+  8 17  2  0  0  0  0
+  9 10  1  0  0  0  0
+ 10 11  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 11 16  2  0  0  0  0
+ 12 13  2  0  0  0  0
+ 13 14  1  0  0  0  0
+ 14 15  2  0  0  0  0
+ 15 16  1  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22318
+
+>  <DSSTox_CID>
+2318
+
+>  <DSSTox_Generic_SID>
+22318
+
+>  <DSSTox_FileID>
+11_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C15H12O2
+
+>  <STRUCTURE_MolecularWeight>
+224.2546
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+flavanone
+
+>  <TestSubstance_CASRN>
+487-26-3
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+2-phenyl-2,3-dihydro-4H-chromen-4-one
+
+>  <STRUCTURE_SMILES>
+O1C2=C(C=CC=C2)C(CC1C3C=CC=CC=3)=O
+
+>  <STRUCTURE_Parent_SMILES>
+O1C2=C(C=CC=C2)C(CC1C3C=CC=CC=3)=O
+
+>  <STRUCTURE_InChI>
+InChI=1/C15H12O2/c16-13-10-15(11-6-2-1-3-7-11)17-14-9-5-4-8-12(13)14/h1-9,15H,10H2
+
+>  <STRUCTURE_InChIKey>
+ZONYXWQDUYMKFB-UHFFFAOYAD
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Phytoestrogens Flavanones
+
+>  <ER_RBA>
+0
+
+>  <LOG_ER_RBA>
+-10000
+
+>  <ActivityScore_NCTRER>
+0
+
+>  <ActivityOutcome_NCTRER>
+inactive
+
+>  <ActivityCategory_ER_RBA>
+inactive
+
+>  <Mean_ER_RBA_ChemClass>
+0.019
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+Flavanones are weak binders, RBA optimized when OH groups in 6,4' positions approx correspond to 4,4' OH positions in DES; less rigid flat structure than flavones leads to slightly lowered RBAs.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+0
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+0
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+3.28
+
+$$$$
+
+
+
+ 22 24  0  0  1  0  0  0  0  0  1 V2000
+    3.4478   -5.3321    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.5867   -5.9948    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.4478   -4.0069    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.5867   -3.3339    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3089   -5.9948    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7463   -4.0069    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    5.7463   -5.3321    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3089   -3.3339    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.8955   -3.3339    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1596   -5.3321    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    6.8955   -2.0086    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0344   -1.3460    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1596   -4.0069    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.5867   -7.3304    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    9.1941   -2.0086    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0344   -4.0069    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    9.1941   -3.3339    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3089   -7.3304    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    8.0344   -0.0104    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -3.3235    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   10.3537   -1.3356    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   10.3537    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  1  3  2  0  0  0  0
+  1  5  1  0  0  0  0
+  2  7  1  0  0  0  0
+  2 14  2  0  0  0  0
+  3  4  1  0  0  0  0
+  3  8  1  0  0  0  0
+  4  6  1  0  0  0  0
+  5 10  2  0  0  0  0
+  5 18  1  0  0  0  0
+  6  9  1  6  0  0  0
+  6  7  1  0  0  0  0
+  8 13  2  0  0  0  0
+  9 11  2  0  0  0  0
+  9 16  1  0  0  0  0
+ 10 13  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 19  1  0  0  0  0
+ 12 15  2  0  0  0  0
+ 13 20  1  0  0  0  0
+ 15 17  1  0  0  0  0
+ 15 21  1  0  0  0  0
+ 16 17  2  0  0  0  0
+ 21 22  1  0  0  0  0
+M  END
+>  <DSSTox_RID>
+22319
+
+>  <DSSTox_CID>
+2319
+
+>  <DSSTox_Generic_SID>
+22319
+
+>  <DSSTox_FileID>
+12_NCTRER_v4b
+
+>  <STRUCTURE_Formula>
+C16H14O6
+
+>  <STRUCTURE_MolecularWeight>
+302.283
+
+>  <STRUCTURE_ChemicalType>
+defined organic
+
+>  <STRUCTURE_TestedForm_DefinedOrganic>
+parent 
+
+>  <STRUCTURE_Shown>
+tested chemical
+
+>  <TestSubstance_ChemicalName>
+hesperetin
+
+>  <TestSubstance_CASRN>
+520-33-2
+
+>  <TestSubstance_Description>
+single chemical compound
+
+>  <ChemicalNote>
+stereochem
+
+>  <STRUCTURE_ChemicalName_IUPAC>
+(2S)-5,7-dihydroxy-2-(3-hydroxy-4-methoxyphenyl)-2,3-dihydro-4H-chromen-4-one
+
+>  <STRUCTURE_SMILES>
+O[C@H]1CC3=C(C=C(O)C=C3O)O[C@@H]1[C@@]2=CC(O)=C(O)C=C2
+
+>  <STRUCTURE_Parent_SMILES>
+O[C@H]1CC3=C(C=C(O)C=C3O)O[C@@H]1[C@@]2=CC(O)=C(O)C=C2
+
+>  <STRUCTURE_InChI>
+InChI=1/C16H14O6/c1-21-13-3-2-8(4-10(13)18)14-7-12(20)16-11(19)5-9(17)6-15(16)22-14/h2-6,14,17-19H,7H2,1H3/t14-/m0/s1
+
+>  <STRUCTURE_InChIKey>
+AIONOLUJZLIMTK-AWEZNQCLBH
+
+>  <StudyType>
+Receptor Binding
+
+>  <Endpoint>
+Estrogen Receptor Relative Binding Affinity
+
+>  <Species>
+rat
+
+>  <ChemClass_ERB>
+Phytoestrogens Flavanones
+
+>  <ER_RBA>
+0
+
+>  <LOG_ER_RBA>
+-10000
+
+>  <ActivityScore_NCTRER>
+0
+
+>  <ActivityOutcome_NCTRER>
+inactive
+
+>  <ActivityCategory_ER_RBA>
+inactive
+
+>  <Mean_ER_RBA_ChemClass>
+0.019
+
+>  <ActivityCategory_Rationale_ChemClass_ERB>
+Flavanones are weak binders, RBA optimized when OH groups in 6,4' positions approx correspond to 4,4' OH positions in DES; less rigid flat structure than flavones leads to slightly lowered RBAs.
+
+>  <F1_Ring>
+1
+
+>  <F2_AromaticRing>
+1
+
+>  <F3_PhenolicRing>
+1
+
+>  <F4_Heteroatom>
+0
+
+>  <F5_Phenol3nPhenyl>
+1
+
+>  <F6_OtherKeyFeatures>
+0
+
+>  <LOGP>
+2.44
+
+>  <Note_NCTRER>
+structure modified v4b
+
+$$$$

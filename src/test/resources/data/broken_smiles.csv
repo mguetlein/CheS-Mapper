@@ -1,0 +1,7 @@
+SMILES,bloodbar_penetration
+c12c(c(ccc1)Cl)C(N(Cc1n2cnc1c1nc(on1)[C@](CO)(C)O)C)=O,no-penetration
+NCCc1cn2c(n1)cccc2,no-penetration
+CCCN(CCC)CCc1ccc(c2c1CC(N2)=C)O,pentration
+cOSTERHASE1(c2c(cc(F)cc2)on1)C1CCN(CCc2c(n3c([C@@H](CCC3)O)nc2C)=O)CC1,pentration
+c12c(C(c3ccccc3)=NCc3n1c(nn3)C)cc(Cl)cc2,pentration
+
