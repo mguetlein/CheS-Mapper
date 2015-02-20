@@ -36,11 +36,11 @@ import org.chesmapper.map.dataInterface.SubstructureSmartsType;
 import org.chesmapper.view.cluster.Cluster;
 import org.chesmapper.view.cluster.ClusterController;
 import org.chesmapper.view.cluster.Clustering;
+import org.chesmapper.view.cluster.Clustering.SelectionListener;
 import org.chesmapper.view.cluster.ClusteringImpl;
 import org.chesmapper.view.cluster.Compound;
 import org.chesmapper.view.cluster.CompoundSelection;
 import org.chesmapper.view.cluster.SALIProperty;
-import org.chesmapper.view.cluster.Clustering.SelectionListener;
 import org.chesmapper.view.gui.ViewControler.FeatureFilter;
 import org.chesmapper.view.gui.ViewControler.Style;
 import org.chesmapper.view.gui.swing.ComponentFactory;
@@ -50,10 +50,10 @@ import org.mg.javalib.gui.MultiImageIcon;
 import org.mg.javalib.gui.MultiImageIcon.Layout;
 import org.mg.javalib.gui.MultiImageIcon.Orientation;
 import org.mg.javalib.util.ImageLoader;
+import org.mg.javalib.util.ImageLoader.Image;
 import org.mg.javalib.util.ListUtil;
 import org.mg.javalib.util.SwingUtil;
 import org.mg.javalib.util.ThreadUtil;
-import org.mg.javalib.util.ImageLoader.Image;
 
 public class InfoPanel extends JPanel
 {
@@ -424,12 +424,13 @@ public class InfoPanel extends JPanel
 					else if (column == 1 && table.getValueAt(row, 0) instanceof CompoundProperty)
 					{
 						c.setFont(c.getFont().deriveFont(Font.ITALIC));
-						if (isSelected == false)// && !(selected instanceof Clustering))
-						{
-							Color col = viewControler.getHighlightColor(selected,
-									(CompoundProperty) table.getValueAt(row, 0), true);
-							setForeground(col);
-						}
+						if (!notPainting)
+							if (isSelected == false)// && !(selected instanceof Clustering))
+							{
+								Color col = viewControler.getHighlightColor(selected,
+										(CompoundProperty) table.getValueAt(row, 0), true);
+								setForeground(col);
+							}
 					}
 					return c;
 				};

@@ -30,12 +30,12 @@ import org.chesmapper.map.dataInterface.CompoundGroupWithProperties;
 import org.chesmapper.map.dataInterface.CompoundProperty;
 import org.chesmapper.map.dataInterface.CompoundPropertyOwner;
 import org.chesmapper.map.dataInterface.CompoundPropertyUtil;
+import org.chesmapper.map.dataInterface.CompoundPropertyUtil.NominalColoring;
 import org.chesmapper.map.dataInterface.FragmentProperty;
 import org.chesmapper.map.dataInterface.NominalProperty;
 import org.chesmapper.map.dataInterface.NumericProperty;
 import org.chesmapper.map.dataInterface.SingleCompoundPropertyOwner;
 import org.chesmapper.map.dataInterface.SubstructureSmartsType;
-import org.chesmapper.map.dataInterface.CompoundPropertyUtil.NominalColoring;
 import org.chesmapper.map.gui.CheSMapperWizard;
 import org.chesmapper.map.main.ScreenSetup;
 import org.chesmapper.map.main.Settings;
@@ -1206,7 +1206,10 @@ public class MainPanel extends JPanel implements ViewControler, ClusterControlle
 		if (clustering.numClusters() > 0)
 			throw new IllegalStateException("only done once at the start");
 		clustering.newClustering(clusteredDataset);
-		clustering.initFeatureNormalization();
+		if (clustering.isBigDataMode())
+			featureSortingEnabled = false;
+		if (featureSortingEnabled)
+			clustering.initFeatureNormalization();
 
 		clustering.getClusterActive().addListenerFirst(new PropertyChangeListener()
 		{
@@ -2804,7 +2807,8 @@ public class MainPanel extends JPanel implements ViewControler, ClusterControlle
 									d.setCheSMappingWarningOwner(taskDialog);
 									guiControler.unblockMessages();
 									clustering.newClustering(d);
-									clustering.initFeatureNormalization();
+									if (featureSortingEnabled)
+										clustering.initFeatureNormalization();
 									task.finish();
 								}
 								TaskProvider.removeTask();

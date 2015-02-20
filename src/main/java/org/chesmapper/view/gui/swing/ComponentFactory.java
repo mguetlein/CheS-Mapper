@@ -441,10 +441,16 @@ public class ComponentFactory
 	public static class FactoryTableCellRenderer extends DefaultTableCellRenderer
 	{
 		boolean halfTransparent;
+		protected boolean notPainting = false;
 
 		public FactoryTableCellRenderer(boolean halfTransparent)
 		{
 			this.halfTransparent = halfTransparent;
+		}
+
+		public void setNotPainting(boolean notPainting)
+		{
+			this.notPainting = notPainting;
 		}
 
 		@Override
@@ -452,23 +458,24 @@ public class ComponentFactory
 				boolean hasFocus, int row, int column)
 		{
 			super.getTableCellRendererComponent(table, value, isSelected, false, row, column);
-			if (isSelected)
-			{
-				setBackground(LIST_ACTIVE_BACKGROUND);
-				setOpaque(true);
-				setForeground(LIST_SELECTION_FOREGROUND);
-			}
-			else
-			{
-				if (halfTransparent)
+			if (!notPainting)
+				if (isSelected)
 				{
-					setBackground(new Color(BACKGROUND.getRed(), BACKGROUND.getGreen(), BACKGROUND.getBlue(), 100));
+					setBackground(LIST_ACTIVE_BACKGROUND);
 					setOpaque(true);
+					setForeground(LIST_SELECTION_FOREGROUND);
 				}
 				else
-					setOpaque(false);
-				setForeground(FOREGROUND);
-			}
+				{
+					if (halfTransparent)
+					{
+						setBackground(new Color(BACKGROUND.getRed(), BACKGROUND.getGreen(), BACKGROUND.getBlue(), 100));
+						setOpaque(true);
+					}
+					else
+						setOpaque(false);
+					setForeground(FOREGROUND);
+				}
 			return this;
 		}
 	}
@@ -537,8 +544,12 @@ public class ComponentFactory
 		for (int r = 0; r < table.getRowCount(); r++)
 		{
 			renderer = table.getCellRenderer(r, vColIndex);
+			if (renderer instanceof FactoryTableCellRenderer)
+				((FactoryTableCellRenderer) renderer).setNotPainting(true);
 			comp = renderer.getTableCellRendererComponent(table, table.getValueAt(r, vColIndex), false, false, r,
 					vColIndex);
+			if (renderer instanceof FactoryTableCellRenderer)
+				((FactoryTableCellRenderer) renderer).setNotPainting(false);
 			width = Math.max(width, comp.getPreferredSize().width);
 		}
 
