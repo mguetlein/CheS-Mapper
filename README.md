@@ -7,11 +7,11 @@ For documentation and to run CheS-Mapper, please visit: http://ches-mapper.org
 
 #### Build
 
-To build the project form source use maven:
+Please use maven to compile the project from source code:
 
 	mvn clean install
 
-To include it into your own java maven project:
+You can also include it into your own java maven project:
 
 ```
 <repository>
