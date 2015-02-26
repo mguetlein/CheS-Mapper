@@ -250,6 +250,8 @@ public class ClusteringValues
 			updateNormalizedSummary(p);
 		if (p instanceof NominalProperty)
 			return formattedSummarys.get(p).toString(html);
+		else if (summarys.get(p).isAllNull())
+			return p.getFormattedNullValue();
 		else
 			return summarys.get(p).toString(html);
 	}
@@ -290,6 +292,8 @@ public class ClusteringValues
 	{
 		if (!summarys.containsKey(p))
 			updateNormalizedSummary(p);
+		if (summarys.get(p).isAllNull())
+			return null;
 		return ((DoubleArraySummary) summarys.get(p)).getMean();
 	}
 

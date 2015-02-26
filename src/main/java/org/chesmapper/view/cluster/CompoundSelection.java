@@ -37,6 +37,8 @@ public class CompoundSelection implements CompoundGroupWithProperties
 	{
 		if (!summarys.containsKey(p))
 			updateNumeric(p);
+		if (summarys.get(p).isAllNull())
+			return null;
 		return ((DoubleArraySummary) summarys.get(p)).getMean();
 	}
 
@@ -82,7 +84,12 @@ public class CompoundSelection implements CompoundGroupWithProperties
 			else
 				updateNominal((NominalProperty) p);
 		if (p instanceof NumericProperty)
-			return summarys.get(p).toString(false);
+		{
+			if (summarys.get(p).isAllNull())
+				return p.getFormattedNullValue();
+			else
+				return summarys.get(p).toString(false);
+		}
 		else
 			return formattedSummarys.get(p).toString(false);
 	}
