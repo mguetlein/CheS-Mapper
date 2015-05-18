@@ -34,7 +34,7 @@ Replace X.X.X with the version of your choice. Check http://fantomas.informatik.
 
 This git repository includes all 3d viewer related source code.
 
-The mapping and wizard code is provided in sub-directory: https://github.com/mguetlein/CMMapping
+The mapping and wizard code is provided in sub-project: https://github.com/mguetlein/CMMapping
 
 
 
