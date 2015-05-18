@@ -30,6 +30,13 @@ You can also include it into your own java maven project:
 
 Replace X.X.X with the version of your choice. Check http://fantomas.informatik.uni-mainz.de/mvnrepo/repository/org/chesmapper/CheS-Mapper/maven-metadata-local.xml for available versions.
 
+#### Source code
+
+This git repository includes all 3d viewer related source code.
+
+The mapping and wizard code is provided in sub-directory: https://github.com/mguetlein/CMMapping
+
+
 
 
     
