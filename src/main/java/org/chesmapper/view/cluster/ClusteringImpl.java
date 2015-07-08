@@ -1227,26 +1227,26 @@ public class ClusteringImpl implements Zoomable, Clustering
 				throw new IllegalArgumentException("not yet implemented");
 		}
 
-		if (p instanceof NumericProperty)
+		for (int i = 0; i < getNumCompounds(false); i++)
 		{
-			int count = 0;
+			Compound c = null;
 			for (Compound comp : getCompounds(false))
 			{
-				if (comp.getDoubleValue((NumericProperty) p) != null)
+				if (comp.getOrigIndex() == i)
 				{
-					d[count] = getNormalizedDoubleValue(comp, (NumericProperty) p);
+					c = comp;
+					break;
 				}
-				count++;
 			}
-		}
-		else
-		{
-			int count = 0;
-			for (Compound comp : getCompounds(false))
+			if (p instanceof NumericProperty)
 			{
-				if (comp.getStringValue((NominalProperty) p) != null)
-					d[count] = (double) ArrayUtil.indexOf(domain, comp.getStringValue((NominalProperty) p));
-				count++;
+				if (c.getDoubleValue((NumericProperty) p) != null)
+					d[i] = getNormalizedDoubleValue(c, (NumericProperty) p);
+			}
+			else
+			{
+				if (c.getStringValue((NominalProperty) p) != null)
+					d[i] = (double) ArrayUtil.indexOf(domain, c.getStringValue((NominalProperty) p));
 			}
 		}
 
