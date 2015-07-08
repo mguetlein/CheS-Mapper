@@ -18,6 +18,8 @@ import javax.swing.JSpinner;
 
 import org.chesmapper.map.alg.Algorithm;
 import org.chesmapper.map.alg.align3d.NoAligner;
+import org.chesmapper.map.alg.align3d.ThreeDAligner;
+import org.chesmapper.map.alg.build3d.ThreeDBuilder;
 import org.chesmapper.map.alg.build3d.UseOrigStructures;
 import org.chesmapper.map.alg.cluster.DatasetClusterer;
 import org.chesmapper.map.alg.embed3d.ThreeDEmbedder;
@@ -74,20 +76,33 @@ public class MappingCreator
 			DatasetClusterer clust, ThreeDEmbedder emb, DoubleKeyHashMap<Algorithm, String, Object> algorithmProps,
 			String mappingKey)
 	{
+		return create(mode, dataset, feats, frags, clust, emb, algorithmProps, mappingKey, null, null);
+	}
+
+	public static CheSMapping create(Mode mode, String dataset, DescriptorSelection feats, FragmentSettings frags,
+			DatasetClusterer clust, ThreeDEmbedder emb, DoubleKeyHashMap<Algorithm, String, Object> algorithmProps,
+			String mappingKey, ThreeDBuilder builder, ThreeDAligner align)
+	{
 		if (mode == Mode.StoreAndLoadProps)
 		{
+			if (builder != null || align != null)
+				throw new IllegalStateException("not yet implemented");
 			applyAlgorithmProps(clust, emb, algorithmProps);
 			return storeAndLoadProps(dataset, feats, frags, clust, emb, mappingKey);
 		}
 		if (mode == Mode.DirectlyUseAlgorithms)
 		{
 			applyAlgorithmProps(clust, emb, algorithmProps);
-			return directlyUseAlgorithms(dataset, feats, frags, clust, emb);
+			return directlyUseAlgorithms(dataset, feats, frags, clust, emb, builder, align);
 		}
 		if (mode == Mode.RestartWizardWithProps)
 			return restartWizardWithProps(feats, mappingKey);
 		if (mode == Mode.ConfigureWizard)
+		{
+			if (builder != null || align != null)
+				throw new IllegalStateException("not yet implemented");
 			return configureWizard(dataset, feats, frags, clust, emb, algorithmProps);
+		}
 		else
 			throw new IllegalArgumentException();
 	}
@@ -451,13 +466,20 @@ public class MappingCreator
 	private static CheSMapping directlyUseAlgorithms(String dataset, DescriptorSelection feats, FragmentSettings frags,
 			DatasetClusterer clust, ThreeDEmbedder emb)
 	{
+		return directlyUseAlgorithms(dataset, feats, frags, clust, emb, UseOrigStructures.INSTANCE, NoAligner.INSTANCE);
+	}
+
+	private static CheSMapping directlyUseAlgorithms(String dataset, DescriptorSelection feats, FragmentSettings frags,
+			DatasetClusterer clust, ThreeDEmbedder emb, ThreeDBuilder builder, ThreeDAligner align)
+
+	{
 		// use direct way without props, both should yield equal results
 		// (doing this instead of comparing mapping directly because algorithms are singletons)
 		DatasetFile d = new DatasetLoader(false).load(dataset);
 		if (frags != null)
 			frags.apply(d);
 		return new CheSMapping(d, ListUtil.toArray(CompoundPropertySet.class, feats.getFilteredFeatures(d)), clust,
-				UseOrigStructures.INSTANCE, emb, NoAligner.INSTANCE);
+				builder, emb, align);
 	}
 
 }

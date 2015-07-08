@@ -8,17 +8,30 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.chesmapper.map.alg.Algorithm;
+import org.chesmapper.map.alg.align3d.MCSAligner;
+import org.chesmapper.map.alg.align3d.MaxFragAligner;
+import org.chesmapper.map.alg.align3d.NoAligner;
+import org.chesmapper.map.alg.align3d.ThreeDAligner;
+import org.chesmapper.map.alg.build3d.CDK3DBuilder;
+import org.chesmapper.map.alg.build3d.OpenBabel3DBuilder;
+import org.chesmapper.map.alg.build3d.ThreeDBuilder;
+import org.chesmapper.map.alg.build3d.UseOrigStructures;
 import org.chesmapper.map.alg.cluster.DatasetClusterer;
+import org.chesmapper.map.alg.cluster.ManualClusterer;
 import org.chesmapper.map.alg.cluster.NoClusterer;
 import org.chesmapper.map.alg.cluster.r.DynamicTreeCutHierarchicalRClusterer;
 import org.chesmapper.map.alg.embed3d.AbstractRTo3DEmbedder;
 import org.chesmapper.map.alg.embed3d.Random3DEmbedder;
 import org.chesmapper.map.alg.embed3d.ThreeDEmbedder;
 import org.chesmapper.map.alg.embed3d.WekaPCA3DEmbedder;
+import org.chesmapper.map.alg.embed3d.r.SMACOF3DEmbedder;
 import org.chesmapper.map.alg.embed3d.r.Sammon3DEmbedder;
+import org.chesmapper.map.alg.embed3d.r.TSNEFeature3DEmbedder;
 import org.chesmapper.map.data.ClusteringData;
 import org.chesmapper.map.data.DatasetFile;
+import org.chesmapper.map.data.FeatureService;
 import org.chesmapper.map.data.fragments.MatchEngine;
 import org.chesmapper.map.dataInterface.CompoundPropertySet;
 import org.chesmapper.map.dataInterface.CompoundPropertySet.Type;
@@ -29,12 +42,15 @@ import org.chesmapper.map.main.CheSMapping;
 import org.chesmapper.map.main.Settings;
 import org.chesmapper.map.property.CDKFingerprintSet;
 import org.chesmapper.map.property.FminerPropertySet;
+import org.chesmapper.map.property.MossFragmentSet;
 import org.chesmapper.map.property.OBFingerprintSet;
 import org.chesmapper.map.property.PropertySetProvider;
 import org.chesmapper.map.property.PropertySetProvider.PropertySetShortcut;
 import org.chesmapper.map.workflow.ClustererProvider;
+import org.chesmapper.map.workflow.EmbedderProvider;
 import org.chesmapper.map.workflow.MappingWorkflow.DescriptorSelection;
 import org.chesmapper.map.workflow.MappingWorkflow.FragmentSettings;
+import org.chesmapper.test.runtime.RuntimeEval;
 import org.chesmapper.test.util.MappingCreator;
 import org.chesmapper.test.util.MappingCreator.IllegalSettingException;
 import org.chesmapper.test.util.MappingCreator.Mode;
@@ -65,7 +81,7 @@ public class MappingAndExportTest
 			throw new IllegalStateException("tests require obenbabel version 2.3.2, is: " + version);
 	}
 
-	static class DatasetConfig
+	public static class DatasetConfig
 	{
 		String name;
 		int size;
@@ -105,7 +121,7 @@ public class MappingAndExportTest
 	static DatasetConfig D_CSV = new DatasetConfig("caco2_20.csv", 20, new String[] { "name", "caco2", "logD", "rgyr",
 			"HCPSA", "fROTB" }, null, "logD,rgyr,HCPSA,fROTB");
 
-	static class FeatureConfig
+	public static class FeatureConfig
 	{
 		String shortName;
 		String featureNames[];
@@ -142,17 +158,21 @@ public class MappingAndExportTest
 	final static DatasetConfig datasets[];
 	final static DatasetClusterer clusterers[];
 	final static ThreeDEmbedder embedders[];
+	final static ThreeDBuilder builders[];
+	final static ThreeDAligner aligners[];
 	final static PropertySetShortcut featureTypes[];
 	final static int minFreq[];
 	final static MatchEngine matchEngines[];
 	final static MappingCreator.Mode mappingMode[];
 	final static Boolean testCaching;
+
 	final static DoubleKeyHashMap<Algorithm, String, Object> algorithmProps = new DoubleKeyHashMap<Algorithm, String, Object>();
 	static
 	{
-		algorithmProps.put(new ClustererProvider().getYesAlgorithm(), "minNumClusters", 3);
-		algorithmProps.put(DynamicTreeCutHierarchicalRClusterer.INSTANCE,
-				"Minimum number of compounds in each cluster (minClusterSize)", 2);
+		//		algorithmProps.put(new ClustererProvider().getYesAlgorithm(), "minNumClusters", 3);
+		//		algorithmProps.put(DynamicTreeCutHierarchicalRClusterer.INSTANCE,
+
+		//				"Minimum number of compounds in each cluster (minClusterSize)", 2);
 		//not testing random-3d-seed, 
 		//configure-wizard currently does not change backup-alg properties, and not visible in simple view
 		//algorithmProps.put(Random3DEmbedder.INSTANCE, "Random seed", 2);
@@ -194,6 +214,92 @@ public class MappingAndExportTest
 			matchEngines = null;
 			mappingMode = new MappingCreator.Mode[] { MappingCreator.Mode.DirectlyUseAlgorithms };
 			testCaching = false;
+			builders = new ThreeDBuilder[] { UseOrigStructures.INSTANCE };
+			aligners = new ThreeDAligner[] { NoAligner.INSTANCE };
+		}
+		else if (TestLauncher.MAPPING_TEST.toString().startsWith("mapping_runtime"))
+		{
+			ThreeDEmbedder[] runtime_embedder = new ThreeDEmbedder[] { Random3DEmbedder.INSTANCE };
+			ThreeDBuilder[] runtime_builder = new ThreeDBuilder[] { OpenBabel3DBuilder.INSTANCE };
+			DatasetClusterer[] runtime_clusterer = new DatasetClusterer[] { NoClusterer.INSTANCE };
+			ThreeDAligner[] runtime_aligner = new ThreeDAligner[] { NoAligner.INSTANCE };
+			PropertySetShortcut[] runtime_feature_type = new PropertySetShortcut[] { PropertySetShortcut.cdk };
+			MatchEngine[] runtime_matchEngines = new MatchEngine[] { MatchEngine.OpenBabel };
+
+			ThreeDEmbedder[] all_runtime_embedder = ThreeDEmbedder.EMBEDDERS;
+			all_runtime_embedder = ArrayUtils.removeElement(all_runtime_embedder, Random3DEmbedder.INSTANCE);
+			all_runtime_embedder = ArrayUtils.removeElement(all_runtime_embedder, WekaPCA3DEmbedder.INSTANCE);
+			all_runtime_embedder = ArrayUtils.removeElement(all_runtime_embedder, SMACOF3DEmbedder.INSTANCE);
+			all_runtime_embedder = ArrayUtils.removeElement(all_runtime_embedder, TSNEFeature3DEmbedder.INSTANCE);
+			all_runtime_embedder = ArrayUtils.add(all_runtime_embedder, 0, new EmbedderProvider().getYesAlgorithm());
+			all_runtime_embedder = ArrayUtils.add(all_runtime_embedder, 3, Sammon3DEmbedder.INSTANCE_Tanimoto);
+
+			if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_runtime_builder)
+			{
+				runtime_builder = new ThreeDBuilder[] { CDK3DBuilder.INSTANCE, OpenBabel3DBuilder.INSTANCE };
+				Settings.FORCE_CACHING_DISABLED_BUILDER = true;
+			}
+			else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_runtime_features)
+			{
+				runtime_feature_type = new PropertySetShortcut[] { PropertySetShortcut.ob, PropertySetShortcut.cdk,
+						PropertySetShortcut.maccs, PropertySetShortcut.cdkFunct, PropertySetShortcut.cdkBioAct,
+						PropertySetShortcut.obFP2, PropertySetShortcut.moss };
+				runtime_matchEngines = new MatchEngine[] { MatchEngine.OpenBabel, MatchEngine.CDK };
+				Settings.FORCE_CACHING_DISABLED_FEATURES = true;
+			}
+			else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_runtime_features_ob)
+			{
+				runtime_feature_type = new PropertySetShortcut[] { PropertySetShortcut.ob };
+				Settings.FORCE_CACHING_DISABLED_FEATURES = true;
+			}
+			else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_runtime_embedding)
+			{
+				//				runtime_embedder = new ThreeDEmbedder[] { WekaPCA3DEmbedder.INSTANCE_NO_PROBS,
+				//						Sammon3DEmbedder.INSTANCE };
+				runtime_embedder = all_runtime_embedder;
+				runtime_embedder = ArrayUtils.removeElement(all_runtime_embedder, Sammon3DEmbedder.INSTANCE_Tanimoto);
+				Settings.FORCE_CACHING_DISABLED_EMBEDDING = true;
+				//				Settings.BIG_DATA = true;
+			}
+			else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_runtime_embedding2)
+			{
+				//				runtime_embedder = new ThreeDEmbedder[] { WekaPCA3DEmbedder.INSTANCE_NO_PROBS,
+				//						Sammon3DEmbedder.INSTANCE };
+				runtime_feature_type = new PropertySetShortcut[] { PropertySetShortcut.obFP2 };
+				runtime_embedder = all_runtime_embedder;
+				Settings.FORCE_CACHING_DISABLED_EMBEDDING = true;
+				//				Settings.BIG_DATA = true;
+			}
+			else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_runtime_clustering)
+			{
+				//				runtime_clusterer = new DatasetClusterer[] { new ClustererProvider().getYesAlgorithm(),
+				//						DynamicTreeCutHierarchicalRClusterer.INSTANCE };
+				runtime_clusterer = DatasetClusterer.CLUSTERERS;
+				runtime_clusterer = ArrayUtils.removeElement(runtime_clusterer, NoClusterer.INSTANCE);
+				runtime_clusterer = ArrayUtils.removeElement(runtime_clusterer, ManualClusterer.INSTANCE);
+				runtime_clusterer = ArrayUtils.add(runtime_clusterer, 0, new ClustererProvider().getYesAlgorithm());
+				Settings.FORCE_CACHING_DISABLED_CLUSTERING = true;
+			}
+			else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_runtime_align)
+			{
+				runtime_feature_type = new PropertySetShortcut[] { PropertySetShortcut.obFP2 };
+				runtime_clusterer = new DatasetClusterer[] { new ClustererProvider().getYesAlgorithm() };
+				runtime_aligner = new ThreeDAligner[] { MCSAligner.INSTANCE, MaxFragAligner.INSTANCE };
+				Settings.FORCE_CACHING_DISABLED_ALIGNER = true;
+			}
+			else
+				throw new IllegalStateException();
+
+			datasets = RuntimeEval.DATASETS;
+			featureTypes = runtime_feature_type;
+			minFreq = new int[] { -1 };
+			matchEngines = runtime_matchEngines;
+			embedders = runtime_embedder;
+			clusterers = runtime_clusterer;
+			builders = runtime_builder;
+			mappingMode = new MappingCreator.Mode[] { MappingCreator.Mode.DirectlyUseAlgorithms };
+			testCaching = false;
+			aligners = runtime_aligner;
 		}
 		else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_wizard)
 		{
@@ -211,6 +317,8 @@ public class MappingAndExportTest
 			matchEngines = matchEnginesFew;
 			mappingMode = new Mode[] { Mode.StoreAndLoadProps, Mode.RestartWizardWithProps, Mode.ConfigureWizard };
 			testCaching = false;
+			builders = new ThreeDBuilder[] { UseOrigStructures.INSTANCE };
+			aligners = new ThreeDAligner[] { NoAligner.INSTANCE };
 		}
 		else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_cache)
 		{
@@ -227,6 +335,8 @@ public class MappingAndExportTest
 			matchEngines = matchEnginesMany;
 			mappingMode = new Mode[] { Mode.StoreAndLoadProps, Mode.DirectlyUseAlgorithms, Mode.DirectlyUseAlgorithms };
 			testCaching = true;
+			builders = new ThreeDBuilder[] { UseOrigStructures.INSTANCE };
+			aligners = new ThreeDAligner[] { NoAligner.INSTANCE };
 		}
 		else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_all)
 		{
@@ -241,6 +351,8 @@ public class MappingAndExportTest
 			mappingMode = new Mode[] { Mode.StoreAndLoadProps, Mode.DirectlyUseAlgorithms, Mode.DirectlyUseAlgorithms,
 					Mode.RestartWizardWithProps, Mode.ConfigureWizard };
 			testCaching = true;
+			builders = new ThreeDBuilder[] { UseOrigStructures.INSTANCE };
+			aligners = new ThreeDAligner[] { NoAligner.INSTANCE };
 		}
 		else if (TestLauncher.MAPPING_TEST == TestLauncher.MappingTest.mapping_debug)
 		{
@@ -252,6 +364,8 @@ public class MappingAndExportTest
 			matchEngines = new MatchEngine[] { MatchEngine.CDK };
 			mappingMode = new MappingCreator.Mode[] { MappingCreator.Mode.DirectlyUseAlgorithms };
 			testCaching = true;
+			builders = new ThreeDBuilder[] { UseOrigStructures.INSTANCE };
+			aligners = new ThreeDAligner[] { NoAligner.INSTANCE };
 		}
 		else
 			throw new IllegalStateException();
@@ -307,7 +421,9 @@ public class MappingAndExportTest
 				sets = PropertySetProvider.INSTANCE.getDescriptorSets(null, c);
 				for (CompoundPropertySet set : sets)
 				{
-					if ((c == PropertySetShortcut.cdk || c == PropertySetShortcut.ob) && set.getType() != Type.NUMERIC)
+					if ((c == PropertySetShortcut.cdk || c == PropertySetShortcut.cdkFunct
+							|| c == PropertySetShortcut.cdkBioAct || c == PropertySetShortcut.ob)
+							&& set.getType() != Type.NUMERIC)
 						continue;
 					if (!set.isSizeDynamic())
 						for (int i = 0; i < set.getSize(null); i++)
@@ -329,6 +445,8 @@ public class MappingAndExportTest
 						if (sets[0] instanceof FminerPropertySet && matchE == MatchEngine.CDK)
 							continue;
 						if (sets[0] instanceof OBFingerprintSet && matchE == MatchEngine.CDK)
+							continue;
+						if (sets[0] instanceof MossFragmentSet && matchE == MatchEngine.CDK)
 							continue;
 
 						FeatureConfig f = new FeatureConfig(c.toString(), ListUtil.toArray(String.class, props), minF,
@@ -477,18 +595,25 @@ public class MappingAndExportTest
 	static HashMap<String, String> positions = new HashMap<String, String>();
 	static HashMap<String, String> outfiles = new HashMap<String, String>();
 
+	static RuntimeEval runtime = new RuntimeEval();
+
 	@Test
 	public void test()
 	{
 		try
 		{
 			Random r = new Random();
-			ArrayUtil.scramble(datasets, r);
-			ListUtil.scramble(features, r);
-			ArrayUtil.scramble(clusterers, r);
-			ArrayUtil.scramble(embedders, r);
-
-			int max = mappingMode.length * datasets.length * features.size() * clusterers.length * embedders.length;
+			if (!TestLauncher.MAPPING_TEST.toString().startsWith("mapping_runtime"))
+			{
+				ArrayUtil.scramble(datasets, r);
+				ListUtil.scramble(features, r);
+				ArrayUtil.scramble(clusterers, r);
+				ArrayUtil.scramble(embedders, r);
+				ArrayUtil.scramble(builders, r);
+				ArrayUtil.scramble(aligners, r);
+			}
+			int max = mappingMode.length * datasets.length * features.size() * clusterers.length * embedders.length
+					* builders.length * aligners.length;
 			int count = 0;
 
 			int dIdx = 0;
@@ -516,79 +641,123 @@ public class MappingAndExportTest
 							int eIdx = 0;
 							for (ThreeDEmbedder emb : embedders)
 							{
-								// algorithms are singletons, reset values to test proper adjustment
-								for (Algorithm alg : new Algorithm[] { clust, emb })
-									if (alg.getProperties() != null)
-										for (Property p : alg.getProperties())
-											p.setValue(p.getDefaultValue());
-								// check that no gui is used
-								if (ArrayUtil.indexOf(mappingMode, MappingCreator.Mode.ConfigureWizard) == -1
-										&& ArrayUtil.indexOf(mappingMode, MappingCreator.Mode.RestartWizardWithProps) == -1)
-									Assert.assertNull(Settings.TOP_LEVEL_FRAME);
-
-								count++;
-								String msg = count + "/" + max + ":\n ";
-								msg += "data  (" + (dIdx + 1) + "/" + datasets.length + "): " + data.name + "\n ";
-								msg += "map   (" + (mapIdx + 1) + "/" + mappingMode.length + "): " + mapMode + "\n ";
-								msg += "feat  (" + (fIdx + 1) + "/" + features.size() + "): " + feat + "\n ";
-								msg += "clust (" + (cIdx + 1) + "/" + clusterers.length + "): " + clust.getName()
-										+ "\n ";
-								msg += "emb   (" + (eIdx + 1) + "/" + embedders.length + "): " + emb.getName();
-								System.err.println("\n================================================\n" + msg
-										+ "\n------------------------------------------------");
-
-								boolean clustEnabled = clust != NoClusterer.INSTANCE;
-								boolean embEnabled = emb != Random3DEmbedder.INSTANCE;
-								boolean runTest = (clusterers.length == 1 && embedders.length == 1)
-										|| (!clustEnabled && embEnabled) || (clustEnabled && !embEnabled);
-								if (!runTest)
-									System.err.println("skipping cluster - embedding combination");
-								else
+								int bIdx = 0;
+								for (ThreeDBuilder build : builders)
 								{
-									runTest = !(data == D_CSV && feat.shortName.toString().equals(
-											PropertySetShortcut.cdkFunct.toString()));
-									if (!runTest)
-										System.err.println("skipping cdk bug: https://sourceforge.net/p/cdk/bugs/1358");
-								}
-
-								if (runTest)
-								{
-									DescriptorSelection feats = DescriptorSelection.select(feat.shortName,
-											data.integratedFeature, null, null, null);
-									FragmentSettings frags = null;
-									if (feat.minFreq != null)
+									int aIdx = 0;
+									for (ThreeDAligner align : aligners)
 									{
-										if (feat.minFreq == 0)
-											frags = new FragmentSettings(1, false, feat.matchEngine);
+
+										// algorithms are singletons, reset values to test proper adjustment
+										for (Algorithm alg : new Algorithm[] { clust, emb })
+											if (alg.getProperties() != null)
+												for (Property p : alg.getProperties())
+													p.setValue(p.getDefaultValue());
+										// check that no gui is used
+										if (ArrayUtil.indexOf(mappingMode, MappingCreator.Mode.ConfigureWizard) == -1
+												&& ArrayUtil.indexOf(mappingMode,
+														MappingCreator.Mode.RestartWizardWithProps) == -1)
+											Assert.assertNull(Settings.TOP_LEVEL_FRAME);
+
+										count++;
+										String msg = count + "/" + max + ":\n ";
+										msg += "data  (" + (dIdx + 1) + "/" + datasets.length + "): " + data.name
+												+ "\n ";
+										msg += "map   (" + (mapIdx + 1) + "/" + mappingMode.length + "): " + mapMode
+												+ "\n ";
+										msg += "feat  (" + (fIdx + 1) + "/" + features.size() + "): " + feat + "\n ";
+										msg += "clust (" + (cIdx + 1) + "/" + clusterers.length + "): "
+												+ clust.getName() + "\n ";
+										msg += "emb   (" + (eIdx + 1) + "/" + embedders.length + "): " + emb.getName();
+										System.err.println("\n================================================\n" + msg
+												+ "\n------------------------------------------------");
+
+										boolean clustEnabled = clust != NoClusterer.INSTANCE;
+										boolean embEnabled = emb != Random3DEmbedder.INSTANCE;
+										boolean runTest = (clusterers.length == 1 && embedders.length == 1)
+												|| (!clustEnabled && embEnabled) || (clustEnabled && !embEnabled);
+										if (!runTest)
+											System.err.println("skipping cluster - embedding combination");
 										else
-											frags = new FragmentSettings(feat.minFreq, true, feat.matchEngine);
+										{
+											runTest = !(data == D_CSV && feat.shortName.toString().equals(
+													PropertySetShortcut.cdkFunct.toString()));
+											if (!runTest)
+												System.err
+														.println("skipping cdk bug: https://sourceforge.net/p/cdk/bugs/1358");
+										}
+
+										if (TestLauncher.MAPPING_TEST.toString().startsWith("mapping_runtime")
+												&& runtime.isCached(data.name, build,
+														new RuntimeEval.PseudoFeatureAlgorithm(feat.toString(), 0, 0),
+														clust, emb, align))
+										{
+											runTest = false;
+										}
+
+										if (runTest)
+										{
+											DescriptorSelection feats = DescriptorSelection.select(feat.shortName,
+													data.integratedFeature, null, null, null);
+											FragmentSettings frags = null;
+											if (feat.minFreq != null)
+											{
+												if (feat.minFreq == 0)
+													frags = new FragmentSettings(1, false, feat.matchEngine);
+												else
+													frags = new FragmentSettings(feat.minFreq, true, feat.matchEngine);
+											}
+
+											String mapKey = dIdx + "." + fIdx + "." + cIdx + "." + eIdx + "." + bIdx
+													+ "." + aIdx;
+											try
+											{
+												CheSMapping mapping = MappingCreator.create(mapMode, "data/"
+														+ data.name, feats, frags, clust, emb, algorithmProps, mapKey,
+														build, align);
+
+												dataset = mapping.getDatasetFile();
+
+												ClusteringData clusteringData = mapping.doMapping();
+												if (TestLauncher.MAPPING_TEST.toString().startsWith("mapping_runtime"))
+												{
+													runtime.setResult(clusteringData.getName(), clusteringData
+															.getNumCompounds(false), clusteringData.getEmbedQuality(),
+															build,
+															new RuntimeEval.PseudoFeatureAlgorithm(feat.toString(),
+																	mapping.getFeatureComputationRuntime(),
+																	clusteringData.getFeatures().size()), clust, emb,
+															align);
+
+													dataset.clear();
+													new FeatureService().clear(dataset);
+													dataset = null;
+												}
+												else
+												{
+													ClusteringImpl clustering = new ClusteringImpl();
+													clustering.newClustering(clusteringData);
+
+													checkFeatures(data, feat, feats, mapping, clustering);
+
+													DatasetClusterer usedClust = clusteringData.getDatasetClusterer();
+													checkClusters(clust, usedClust, clustering);
+
+													ThreeDEmbedder usedEmb = clusteringData.getThreeDEmbedder();
+													checkEmbed(mapKey, emb, usedEmb, mapping, clusteringData,
+															clustering);
+
+													checkExport(data, feat, mapKey, mapIdx, usedClust, clustering);
+												}
+											}
+											catch (IllegalSettingException e)
+											{
+												System.err.println(e.getMessage());
+											}
+										}
+										aIdx++;
 									}
-
-									String mapKey = dIdx + "." + fIdx + "." + cIdx + "." + eIdx;
-									try
-									{
-										CheSMapping mapping = MappingCreator.create(mapMode, "data/" + data.name,
-												feats, frags, clust, emb, algorithmProps, mapKey);
-										dataset = mapping.getDatasetFile();
-
-										ClusteringData clusteringData = mapping.doMapping();
-										ClusteringImpl clustering = new ClusteringImpl();
-										clustering.newClustering(clusteringData);
-
-										checkFeatures(data, feat, feats, mapping, clustering);
-
-										DatasetClusterer usedClust = clusteringData.getDatasetClusterer();
-										checkClusters(clust, usedClust, clustering);
-
-										ThreeDEmbedder usedEmb = clusteringData.getThreeDEmbedder();
-										checkEmbed(mapKey, emb, usedEmb, mapping, clusteringData, clustering);
-
-										checkExport(data, feat, mapKey, mapIdx, usedClust, clustering);
-									}
-									catch (IllegalSettingException e)
-									{
-										System.err.println(e.getMessage());
-									}
+									bIdx++;
 								}
 								eIdx++;
 							}
@@ -603,6 +772,12 @@ public class MappingAndExportTest
 				dIdx++;
 			}
 			System.err.println("\n" + count + "/" + max + " tests done");
+		}
+		catch (Throwable e)
+		{
+			System.err.println("test failed");
+			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 		finally
 		{
@@ -623,6 +798,9 @@ public class MappingAndExportTest
 				}
 			}
 			System.err.println("deleted " + delCount + "/" + count + " tmp-files");
+
+			if (TestLauncher.MAPPING_TEST.toString().startsWith("mapping_runtime"))
+				runtime.print();
 		}
 	}
 
@@ -789,4 +967,5 @@ public class MappingAndExportTest
 				Assert.assertTrue("not found: " + p + "\n" + s[i], s[i].indexOf("<" + p + ">") != -1);
 		System.err.println("sdf checked! " + nonMissingValueProps.length);
 	}
+
 }

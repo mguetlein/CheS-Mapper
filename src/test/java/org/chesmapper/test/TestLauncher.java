@@ -12,7 +12,8 @@ public class TestLauncher
 	public static enum MappingTest
 	{
 		gui_wizard, gui_viewer, gui_both, mapping_single, mapping_wizard, mapping_cache, mapping_all, mapping_debug,
-		cdk_test
+		mapping_runtime_features_ob, mapping_runtime_features, mapping_runtime_embedding, mapping_runtime_embedding2,
+		mapping_runtime_clustering, mapping_runtime_builder, mapping_runtime_align, cdk_test
 	}
 
 	public static MappingTest MAPPING_TEST;// = MappingTest.all_gui;
@@ -23,7 +24,7 @@ public class TestLauncher
 		try
 		{
 			if (args[0].equals("debug"))
-				test = MappingTest.mapping_cache;
+				test = MappingTest.mapping_single;
 			else
 				test = MappingTest.valueOf(args[0]);
 		}
