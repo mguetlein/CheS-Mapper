@@ -20,8 +20,8 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.chesmapper.map.alg.build3d.AbstractReal3DBuilder;
-import org.chesmapper.map.alg.build3d.OpenBabel3DBuilder;
 import org.chesmapper.map.alg.build3d.AbstractReal3DBuilder.AutoCorrect;
+import org.chesmapper.map.alg.build3d.OpenBabel3DBuilder;
 import org.chesmapper.map.data.CDKCompoundIcon;
 import org.chesmapper.map.data.ClusteringData;
 import org.chesmapper.map.data.DatasetFile;
@@ -51,6 +51,7 @@ import org.chesmapper.view.gui.ViewControler.Style;
 import org.chesmapper.view.gui.util.CompoundPropertyHighlighter;
 import org.chesmapper.view.gui.util.Highlighter;
 import org.mg.javalib.gui.property.ColorGradient;
+import org.mg.javalib.gui.property.WekaPropertyUtil;
 import org.mg.javalib.task.Task;
 import org.mg.javalib.task.TaskDialog;
 import org.mg.javalib.util.ArrayUtil;
@@ -60,7 +61,6 @@ import org.mg.javalib.util.ScreenUtil;
 import org.mg.javalib.util.StringLineAdder;
 import org.mg.javalib.util.SwingUtil;
 import org.mg.javalib.util.ThreadUtil;
-import org.mg.javalib.weka.WekaPropertyUtil;
 
 public class LaunchCheSMapper
 {
@@ -77,7 +77,8 @@ public class LaunchCheSMapper
 		init(Locale.US, ScreenSetup.DEFAULT, true, preLoadWeka);
 	}
 
-	public static synchronized void init(Locale locale, ScreenSetup screenSetup, boolean loadProps, boolean preLoadWeka)
+	public static synchronized void init(Locale locale, ScreenSetup screenSetup, boolean loadProps,
+			boolean preLoadWeka)
 	{
 		if (initialized)
 		{
@@ -89,7 +90,8 @@ public class LaunchCheSMapper
 
 		Settings.LOGGER.info("Starting CheS-Mapper at " + new Date());
 		Settings.LOGGER.info("OS is '" + System.getProperty("os.name") + "'");
-		Settings.LOGGER.info("Java runtime version is '" + System.getProperty("java.runtime.version") + "'");
+		Settings.LOGGER.info(
+				"Java runtime version is '" + System.getProperty("java.runtime.version") + "'");
 		Locale.setDefault(Locale.US);
 
 		new Thread(new Runnable()
@@ -127,17 +129,18 @@ public class LaunchCheSMapper
 	}
 
 	@SuppressWarnings("static-access")
-	private static Option paramOption(char charOpt, String longOpt, String description, String paramName)
+	private static Option paramOption(char charOpt, String longOpt, String description,
+			String paramName)
 	{
-		return OptionBuilder.withLongOpt(longOpt).withDescription(description).hasArgs(1).withArgName(paramName)
-				.create(charOpt);
+		return OptionBuilder.withLongOpt(longOpt).withDescription(description).hasArgs(1)
+				.withArgName(paramName).create(charOpt);
 	}
 
 	@SuppressWarnings("static-access")
 	private static Option longParamOption(String longOpt, String description, String paramName)
 	{
-		return OptionBuilder.withLongOpt(longOpt).withDescription(description).hasArgs(1).withArgName(paramName)
-				.create();
+		return OptionBuilder.withLongOpt(longOpt).withDescription(description).hasArgs(1)
+				.withArgName(paramName).create();
 	}
 
 	@SuppressWarnings("static-access")
@@ -160,7 +163,8 @@ public class LaunchCheSMapper
 			//			ThreadUtil.sleep(10);
 			//			SwingUtil.waitWhileVisible(CheSViewer.getFrame());
 			//			System.exit(0);
-			args = new String[] { "-e", "-d", "/home/martin/workspace/CheS-Map-Test/data/3compounds.sdf", "-f", "ob",
+			args = new String[] { "-e", "-d",
+					"/home/martin/workspace/CheS-Map-Test/data/3compounds.sdf", "-f", "ob",
 					"--rem-missing-above-ratio", "1", "-o", "/tmp/test.csv" };
 
 			//			args = "-s -f ob -d /home/martin/data/Tox21/TOX21S_v2a_8193_22Mar2012_cleanded.half2.sdf --big-data"
@@ -257,9 +261,11 @@ public class LaunchCheSMapper
 
 		StringLineAdder examples = new StringLineAdder();
 		examples.add("Examples");
-		examples.add("* directly start viewer caco2.sdf dataset with all integrated features apart from the endpoint feature caco2");
+		examples.add(
+				"* directly start viewer caco2.sdf dataset with all integrated features apart from the endpoint feature caco2");
 		examples.add("  -s -d data/caco2.sdf -f integrated -i caco2");
-		examples.add("* export workflow-file for caco2.sdf dataset with all integrated features apart from the endpoint feature caco2");
+		examples.add(
+				"* export workflow-file for caco2.sdf dataset with all integrated features apart from the endpoint feature caco2");
 		examples.add("  -x -d data/caco2.sdf -f integrated -i caco2 -o data/caco-workflow.ches");
 		examples.add("* directly start ches-mapper with workflow-file");
 		examples.add("  -w data/caco-workflow.ches");
@@ -268,8 +274,10 @@ public class LaunchCheSMapper
 
 		Options options = new Options();
 		options.addOption(paramOption('y', "screen-setup",
-				"for expert users, should be one of debug|screenshot|video|small_screen", "setup-mode"));
-		options.addOption(longParamOption("window-size", "window size in <width>x<height>", "window-size"));
+				"for expert users, should be one of debug|screenshot|video|small_screen",
+				"setup-mode"));
+		options.addOption(
+				longParamOption("window-size", "window size in <width>x<height>", "window-size"));
 
 		options.addOption(option('p', "no-properties",
 				"for expert users, prevent ches-mapper from reading property file with saved settings"));
@@ -284,32 +292,34 @@ public class LaunchCheSMapper
 		options.addOption(option('r', "enable-mixture-handling",
 				"enableds mixture handling for physico-chemical descriptors"));
 		options.addOption(paramOption('n', "fp-min-frequency",
-				"sets min-frequency for fingerprints (eclusive with match-fingerprints)", "fp-min-frequency"));
+				"sets min-frequency for fingerprints (eclusive with match-fingerprints)",
+				"fp-min-frequency"));
 		options.addOption(option('u', "keep-uniform-values",
 				"exports features including features with uniform feature values"));
 		options.addOption(longParamOption("rem-missing-above-ratio",
-				"remove features from export with too much missing values (0 <= missing-ratio <=1)", "missing-ratio"));
+				"remove features from export with too much missing values (0 <= missing-ratio <=1)",
+				"missing-ratio"));
 		options.addOption(option('x', "export-workflow",
 				"creates a workflow-file (from dataset -d and features -f to outfile -o)"));
-		options.addOption(paramOption(
-				'q',
-				"export-properties",
+		options.addOption(paramOption('q', "export-properties",
 				"for experts only: additional property that are directly written into the worflow file (e.g.: k1=v1,k2=v2)",
 				"export-properties"));
-		options.addOption(option('s', "start-viewer", "directly starts the viewer (from dataset -d and features -f)"));
-		options.addOption(paramOption('w', "start-workflow", "directly starts the viewer", "workflow-file"));
+		options.addOption(option('s', "start-viewer",
+				"directly starts the viewer (from dataset -d and features -f)"));
+		options.addOption(
+				paramOption('w', "start-workflow", "directly starts the viewer", "workflow-file"));
 
 		options.addOption(paramOption('d', "dataset-file",
 				"input file for export-features, export-workflow, start-viewer", "dataset-file"));
-		options.addOption(paramOption('o', "outfile", "output file for export-features, export-workflow", "outfile"));
-		options.addOption(paramOption(
-				'f',
-				"features",
-				"specify features (comma seperated) : "
-						+ ArrayUtil.toString(PropertySetProvider.PropertySetShortcut.values(), ",", "", "", ""),
+		options.addOption(paramOption('o', "outfile",
+				"output file for export-features, export-workflow", "outfile"));
+		options.addOption(paramOption('f', "features",
+				"specify features (comma seperated) : " + ArrayUtil.toString(
+						PropertySetProvider.PropertySetShortcut.values(), ",", "", "", ""),
 				"features"));
 		options.addOption(longParamOption("integrated-features",
-				"comma seperated list of feature-names that should be used (from features -f)", "integrated-features"));
+				"comma seperated list of feature-names that should be used (from features -f)",
+				"integrated-features"));
 		options.addOption(longParamOption("ignore-features",
 				"comma seperated list of integrated feature-names that should be ignored (from features -f)",
 				"ignored-features"));
@@ -324,57 +334,63 @@ public class LaunchCheSMapper
 		//			clusterNames.add(a.getName());
 		//		options.addOption(paramOption('c', "cluster-algorithm",
 		//				"specify cluster algorithm: " + ListUtil.toString(clusterNames, ", "), "cluster-algorithm"));
-		options.addOption(paramOption('c', "cluster-algorithm", "specify cluster algorithm", "cluster-algorithm"));
+		options.addOption(paramOption('c', "cluster-algorithm", "specify cluster algorithm",
+				"cluster-algorithm"));
 
 		options.addOption(paramOption('t', "fix-3d-sdf-file",
 				"replaces corrupt structures in input-file -t with structures from input-file -d, saves to outfile -o",
 				"corrupt-3d-sdf-file"));
-		options.addOption(paramOption(
-				'v',
-				"fix-3d-sdf-file-external",
+		options.addOption(paramOption('v', "fix-3d-sdf-file-external",
 				"replaces corrupt structures in input-file -v with structures derieved with external-script from smi-file -d, saves to outfile -o",
 				"corrupt-3d-sdf-file"));
 
-		options.addOption(option(
-				'z',
-				"compute-3d",
+		options.addOption(option('z', "compute-3d",
 				"uses openbabel to compute a SDF file (-o) for the input-file -d (no auto-correction of openbabel errors like in gui, use -t or -v)"));
-		options.addOption(paramOption('k', "depict-2d", "depicts 2d images for each compound in dataset file -d",
-				"output-folder"));
+		options.addOption(paramOption('k', "depict-2d",
+				"depicts 2d images for each compound in dataset file -d", "output-folder"));
 		//		options.addOption(option('n', "compute-inchi", "computes inchi for dataset file -d, saves to outfile -o"));
 
 		options.addOption(longParamOption("font-size", "change initial font size", "font-size"));
-		options.addOption(longParamOption("compound-style", "change initial style", "compound-style"));
-		options.addOption(longParamOption("compound-size", "change initial compound size", "compound-size"));
-		options.addOption(longParamOption("highlight-mode", "change initial highlight mode", "highlight-mode"));
+		options.addOption(
+				longParamOption("compound-style", "change initial style", "compound-style"));
+		options.addOption(
+				longParamOption("compound-size", "change initial compound size", "compound-size"));
+		options.addOption(longParamOption("highlight-mode", "change initial highlight mode",
+				"highlight-mode"));
 		options.addOption(longOption("predict", "predict activity"));
 		//		options.addOption(longParamOption("hide-compounds", "change initial hide-compounds mode", "hide compounds"));
 		options.addOption(longParamOption("endpoint-highlight",
-				"enable endpoint-highlighting (log + reverse) for a feature", "endpoint-highlight feature"));
-		options.addOption(longParamOption("select-compounds", "pre select compound/s (comma seperated compound index)",
-				"selected compound/s"));
+				"enable endpoint-highlighting (log + reverse) for a feature",
+				"endpoint-highlight feature"));
+		options.addOption(longParamOption("select-compounds",
+				"pre select compound/s (comma seperated compound index)", "selected compound/s"));
 		options.addOption(longOption("background-white", "set background to white"));
 		options.addOption(longOption("full-screen", "start in full-screen"));
 		options.addOption(longOption("big-data",
 				"start in big-data mode (show data points instead of compound structures)"));
 		options.addOption(longOption("no-cache", "disable caching of embedding results"));
 
-		options.addOption(longParamOption("display-no", "set number of display to start application on",
-				"number of display"));
+		options.addOption(longParamOption("display-no",
+				"set number of display to start application on", "number of display"));
 
-		options.addOption(longParamOption("autocorrect-3d", "corrects ob3d result (when using -z), possible values: "
-				+ ArrayUtil.toString(AutoCorrect.values(), ",", "", "", ""), "autocorrect-3d"));
+		options.addOption(longParamOption("autocorrect-3d",
+				"corrects ob3d result (when using -z), possible values: "
+						+ ArrayUtil.toString(AutoCorrect.values(), ",", "", "", ""),
+				"autocorrect-3d"));
 		options.addOption(longParamOption("distance-to",
 				"adds distance to compound/s to export of features (-e), comma separated compound index",
 				"compound indices"));
 		options.addOption(longParamOption("distance-measure",
-				"configure distance measure for distance-to option (euclidean or tanimoto)", "compound indices"));
+				"configure distance measure for distance-to option (euclidean or tanimoto)",
+				"compound indices"));
 
 		options.addOption(longOption("verbose", "print more messages"));
 		options.addOption(longParamOption("keep-redundant",
-				"keep-redundant features for mapping and exporting (default: false)", "true/false"));
+				"keep-redundant features for mapping and exporting (default: false)",
+				"true/false"));
 
-		options.addOption(longOption("no-warning-dialog", "does not show mapping warning dialog on startup"));
+		options.addOption(
+				longOption("no-warning-dialog", "does not show mapping warning dialog on startup"));
 
 		CommandLineParser parser = new BasicParser();
 		try
@@ -389,7 +405,8 @@ public class LaunchCheSMapper
 				{
 					if (cmd.hasOption("font-size"))
 					{
-						final Integer font = IntegerUtil.parseInteger(cmd.getOptionValue("font-size"));
+						final Integer font = IntegerUtil
+								.parseInteger(cmd.getOptionValue("font-size"));
 						SwingUtilities.invokeLater(new Runnable()
 						{
 							public void run()
@@ -413,7 +430,8 @@ public class LaunchCheSMapper
 					}
 					if (cmd.hasOption("compound-size"))
 					{
-						final Integer size = IntegerUtil.parseInteger(cmd.getOptionValue("compound-size"));
+						final Integer size = IntegerUtil
+								.parseInteger(cmd.getOptionValue("compound-size"));
 						SwingUtilities.invokeLater(new Runnable()
 						{
 							public void run()
@@ -425,7 +443,8 @@ public class LaunchCheSMapper
 					}
 					if (cmd.hasOption("highlight-mode"))
 					{
-						final HighlightMode mode = HighlightMode.valueOf(cmd.getOptionValue("highlight-mode"));
+						final HighlightMode mode = HighlightMode
+								.valueOf(cmd.getOptionValue("highlight-mode"));
 						SwingUtilities.invokeLater(new Runnable()
 						{
 							public void run()
@@ -472,12 +491,16 @@ public class LaunchCheSMapper
 								if (hi instanceof CompoundPropertyHighlighter)
 									if (((CompoundPropertyHighlighter) hi).getProperty().toString()
 											.equals(cmd.getOptionValue("endpoint-highlight")))
-										p = (NumericProperty) ((CompoundPropertyHighlighter) hi).getProperty();
+										p = (NumericProperty) ((CompoundPropertyHighlighter) hi)
+												.getProperty();
 						if (p == null)
-							throw new Error("feature not found: " + cmd.getOptionValue("endpoint-highlight"));
+							throw new Error("feature not found: "
+									+ cmd.getOptionValue("endpoint-highlight"));
 						p = clustering.addLogFeature(p);
-						view.setHighlightColors(new ColorGradient(new Color(100, 255, 100), Color.WHITE,
-								CompoundPropertyUtil.getHighValueColor()), new NumericProperty[] { p });
+						view.setHighlightColors(
+								new ColorGradient(new Color(100, 255, 100), Color.WHITE,
+										CompoundPropertyUtil.getHighValueColor()),
+								new NumericProperty[] { p });
 						ThreadUtil.sleep(2000);
 					}
 					if (cmd.hasOption("full-screen"))
@@ -558,7 +581,8 @@ public class LaunchCheSMapper
 				}
 				catch (Exception e)
 				{
-					throw new IllegalArgumentException("window-size should be <width>x<height> is: " + sc);
+					throw new IllegalArgumentException(
+							"window-size should be <width>x<height> is: " + sc);
 				}
 			}
 
@@ -572,27 +596,30 @@ public class LaunchCheSMapper
 				String o = cmd.getOptionValue("keep-redundant");
 				if (o.equals("true"))
 				{
-					Settings.LOGGER
-							.warn("redundant features will be used for mapping (option keep-redundant was given on startup)");
+					Settings.LOGGER.warn(
+							"redundant features will be used for mapping (option keep-redundant was given on startup)");
 					Settings.SKIP_REDUNDANT_FEATURES = false;
 				}
 				else if (o.equals("false"))
 				{
-					Settings.LOGGER
-							.warn("redundant features will be NOT used for mapping (option keep-redundant was given on startup)");
+					Settings.LOGGER.warn(
+							"redundant features will be NOT used for mapping (option keep-redundant was given on startup)");
 					Settings.SKIP_REDUNDANT_FEATURES = true;
 				}
 				else
-					throw new IllegalArgumentException("value for keep-redundant should be true/false, but is " + o);
+					throw new IllegalArgumentException(
+							"value for keep-redundant should be true/false, but is " + o);
 			}
 
 			if (cmd.hasOption("display-no"))
 			{
-				Settings.TOP_LEVEL_FRAME_SCREEN = Integer.parseInt(cmd.getOptionValue("display-no"));
+				Settings.TOP_LEVEL_FRAME_SCREEN = Integer
+						.parseInt(cmd.getOptionValue("display-no"));
 				if (ScreenUtil.getNumMonitors() <= Settings.TOP_LEVEL_FRAME_SCREEN)
 				{
 					Settings.LOGGER.warn("only " + ScreenUtil.getNumMonitors()
-							+ " monitor/s found (ignoring display-no = " + Settings.TOP_LEVEL_FRAME_SCREEN + ")");
+							+ " monitor/s found (ignoring display-no = "
+							+ Settings.TOP_LEVEL_FRAME_SCREEN + ")");
 					Settings.TOP_LEVEL_FRAME_SCREEN = ScreenUtil.getLargestScreen();
 				}
 			}
@@ -625,8 +652,10 @@ public class LaunchCheSMapper
 					throw new ParseException(
 							"please give dataset-file (-d) and features (-f) and outfile (-o) for feature export");
 				DescriptorSelection features = DescriptorSelection.select(cmd.getOptionValue('f'),
-						cmd.getOptionValue("integrated-features"), cmd.getOptionValue("ignore-features"),
-						cmd.getOptionValue("numeric-features"), cmd.getOptionValue("nominal-features"));
+						cmd.getOptionValue("integrated-features"),
+						cmd.getOptionValue("ignore-features"),
+						cmd.getOptionValue("numeric-features"),
+						cmd.getOptionValue("nominal-features"));
 				FragmentSettings fragmentSettings = null;
 				if (cmd.hasOption('m'))
 				{
@@ -635,11 +664,12 @@ public class LaunchCheSMapper
 					fragmentSettings = new FragmentSettings(1, false, MatchEngine.OpenBabel);
 				}
 				else if (cmd.hasOption('n'))
-					fragmentSettings = new FragmentSettings(Integer.parseInt(cmd.getOptionValue('n')), true,
-							MatchEngine.OpenBabel);
+					fragmentSettings = new FragmentSettings(
+							Integer.parseInt(cmd.getOptionValue('n')), true, MatchEngine.OpenBabel);
 				double missingRatio = 0;
 				if (cmd.hasOption("rem-missing-above-ratio"))
-					missingRatio = Double.parseDouble(cmd.getOptionValue("rem-missing-above-ratio"));
+					missingRatio = Double
+							.parseDouble(cmd.getOptionValue("rem-missing-above-ratio"));
 
 				List<Integer> compounds = new ArrayList<Integer>();
 				if (cmd.hasOption("distance-to"))
@@ -656,8 +686,8 @@ public class LaunchCheSMapper
 						throw new IllegalAccessError("unknown distance measure: "
 								+ cmd.getOptionValue("distance-measure"));
 				}
-				ExportData.scriptExport(infile, features, fragmentSettings, outfile, cmd.hasOption('u'), missingRatio,
-						compounds, euclidean);
+				ExportData.scriptExport(infile, features, fragmentSettings, outfile,
+						cmd.hasOption('u'), missingRatio, compounds, euclidean);
 			}
 			else if (cmd.hasOption('x')) // export workflow
 			{
@@ -668,14 +698,18 @@ public class LaunchCheSMapper
 					throw new ParseException(
 							"please give dataset-file (-d) and features (-f) and outfile (-o) for workflow export");
 				DescriptorSelection features = DescriptorSelection.select(cmd.getOptionValue('f'),
-						cmd.getOptionValue("integrated-features"), cmd.getOptionValue("ignore-features"),
-						cmd.getOptionValue("numeric-features"), cmd.getOptionValue("nominal-features"));
+						cmd.getOptionValue("integrated-features"),
+						cmd.getOptionValue("ignore-features"),
+						cmd.getOptionValue("numeric-features"),
+						cmd.getOptionValue("nominal-features"));
 				MappingWorkflow.createAndStoreMappingWorkflow(infile, outfile, features, null,
-						MappingWorkflow.clustererFromName(cmd.getOptionValue('c')), cmd.getOptionValue('q'));
+						MappingWorkflow.clustererFromName(cmd.getOptionValue('c')),
+						cmd.getOptionValue('q'));
 			}
 			else if (cmd.hasOption('w'))
 			{
-				CheSMapping mapping = MappingWorkflow.createMappingFromMappingWorkflow(cmd.getOptionValue('w'));
+				CheSMapping mapping = MappingWorkflow
+						.createMappingFromMappingWorkflow(cmd.getOptionValue('w'));
 				start(mapping, mod);
 			}
 			else if (cmd.hasOption('s')) // direct start
@@ -685,16 +719,21 @@ public class LaunchCheSMapper
 				CheSMapping mapping;
 				if (infile == null && featureNames == null)
 				{
-					mapping = MappingWorkflow.createMappingFromMappingWorkflow(PropHandler.getProperties());
+					mapping = MappingWorkflow
+							.createMappingFromMappingWorkflow(PropHandler.getProperties());
 				}
 				else
 				{
 					if (infile == null || featureNames == null)
-						throw new ParseException("please give dataset-file (-d) and features (-f) to start viewer");
-					DescriptorSelection features = DescriptorSelection.select(cmd.getOptionValue('f'),
-							cmd.getOptionValue("integrated-features"), cmd.getOptionValue("ignore-features"),
-							cmd.getOptionValue("numeric-features"), cmd.getOptionValue("nominal-features"));
-					Properties workflow = MappingWorkflow.createMappingWorkflow(infile, features, null);
+						throw new ParseException(
+								"please give dataset-file (-d) and features (-f) to start viewer");
+					DescriptorSelection features = DescriptorSelection.select(
+							cmd.getOptionValue('f'), cmd.getOptionValue("integrated-features"),
+							cmd.getOptionValue("ignore-features"),
+							cmd.getOptionValue("numeric-features"),
+							cmd.getOptionValue("nominal-features"));
+					Properties workflow = MappingWorkflow.createMappingWorkflow(infile, features,
+							null);
 					mapping = MappingWorkflow.createMappingFromMappingWorkflow(workflow);
 				}
 				start(mapping, mod);
@@ -704,7 +743,8 @@ public class LaunchCheSMapper
 				String infile = cmd.getOptionValue('d');
 				String outfile = cmd.getOptionValue('o');
 				if (infile == null || outfile == null)
-					throw new ParseException("please give correct-2d-sdf-file (-d) and outfile (-o) for sdf-3d-fix");
+					throw new ParseException(
+							"please give correct-2d-sdf-file (-d) and outfile (-o) for sdf-3d-fix");
 				AbstractReal3DBuilder.check3DSDFile(cmd.getOptionValue('t'), infile, outfile, null);
 			}
 			else if (cmd.hasOption('v'))
@@ -714,14 +754,16 @@ public class LaunchCheSMapper
 				if (infile == null || outfile == null || !infile.endsWith("smi"))
 					throw new ParseException(
 							"please give correct-smi-file (-d) and outfile (-o) for sdf-3d-fix with external script");
-				AbstractReal3DBuilder.check3DSDFileExternal(cmd.getOptionValue('v'), infile, outfile, null);
+				AbstractReal3DBuilder.check3DSDFileExternal(cmd.getOptionValue('v'), infile,
+						outfile, null);
 			}
 			else if (cmd.hasOption('z'))
 			{
 				String infile = cmd.getOptionValue('d');
 				String outfile = cmd.getOptionValue('o');
 				if (infile == null || outfile == null)
-					throw new ParseException("please give dataset-file (-d) and outfile (-o) for compute-3d");
+					throw new ParseException(
+							"please give dataset-file (-d) and outfile (-o) for compute-3d");
 
 				DatasetFile d = new DatasetLoader(false).load(infile);
 				if (d == null)
@@ -731,7 +773,8 @@ public class LaunchCheSMapper
 
 				OpenBabel3DBuilder builder = OpenBabel3DBuilder.INSTANCE;
 				if (cmd.hasOption("autocorrect-3d"))
-					builder.setAutoCorrect(AutoCorrect.valueOf(cmd.getOptionValue("autocorrect-3d")));
+					builder.setAutoCorrect(
+							AutoCorrect.valueOf(cmd.getOptionValue("autocorrect-3d")));
 				else
 					builder.setAutoCorrect(AutoCorrect.disabled);
 				try
@@ -840,7 +883,8 @@ public class LaunchCheSMapper
 			return;
 		}
 
-		Task task = TaskProvider.initTask("Chemical space mapping of " + mapping.getDatasetFile().getName());
+		Task task = TaskProvider
+				.initTask("Chemical space mapping of " + mapping.getDatasetFile().getName());
 		TaskDialog waitingDialog = new TaskDialog(task, Settings.TOP_LEVEL_FRAME_SCREEN);
 		final ClusteringData clusteringData = mapping.doMapping();
 		if (clusteringData == null) //mapping failed
